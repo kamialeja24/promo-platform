@@ -10,6 +10,7 @@
  */
 angular
   .module('promoPlatformApp', [
+    'ui.router',
     'ngAria',
     'ngCookies',
     'ngMessages',
@@ -18,28 +19,38 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
+      $urlRouterProvider.otherwise('/');
+      
+        $stateProvider
+          .state('common', {
+            templateUrl: 'common.html',
+            abstract: true
+          })
+          .state('home', {
+            url: '/home',
+            templateUrl: '/views/main.html',
+            parent: 'common',
+            controller: 'MainCtrl'
+          })
+          .state('login', {
+            url: '/login',
+            templateUrl: 'views/login.html',
+            parent: 'common',
+            controller: 'LoginCtrl'
+          })
+          .state('sign-up', {
+            url: '/sign-up',
+            templateUrl: 'views/sign-up.html',
+            parent: 'common',
+            controller: 'SignUpCtrl'
+          })
+          .state('vendedor-home', {
+            url: '/vendedor-home',
+            templateUrl: 'views/vendedor-home.html',
+            controller: 'VendedorHomeCtrl'
+         })
+}]);
 
-    
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
-      })
-      .when('/sign-up', {
-        templateUrl: 'views/sign-up.html',
-        controller: 'SignUpCtrl'
-      })
-    .when('/vendedor-home', {
-        templateUrl: 'views/vendedor-home.html',
-        controller: 'VendedorHomeCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
 
-  });
+

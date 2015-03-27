@@ -35,48 +35,7 @@
 
   <body ng-app="promoPlatformApp" class="body">
 
-  <section id="container" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-             
-            <!--logo start-->
-            <a ng-href="#/" class="logo"><b>PROMO APP</b></a>
-            <!--logo end-->
-
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <!-- Login button -->
-                    <li><a class="logout" ng-href="#/login">Ingresar</a></li>
-                    <li><a class="logout" href="#/sign-up">Crear cuenta</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
-      
-
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-          <section class="wrapper">
-            <div class="container">
-                <div ng-view></div> <!-- Renders the page that is clicked -->
-            </div>
-          </section>
-
-      <!--main content end-->
-      <!--footer start-->
-      <footer class="site-footer sticky-footer">
-          <div class="text-center">
-            Camila Cardona -Leonardo Celis</br>2015
-          </div>
-      </footer>
-      <!--footer end-->
-  </section>
+      <div ui-view=""></div>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
