@@ -19,12 +19,11 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
-      $urlRouterProvider.otherwise('/');
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
         $stateProvider
           .state('common', {
-            templateUrl: 'common.html',
+            templateUrl: 'common.html', /*This is the 1st (home) layout*/
             abstract: true
           })
           .state('home', {
@@ -50,6 +49,7 @@ angular
             templateUrl: 'views/vendedor-home.html',
             controller: 'VendedorHomeCtrl'
          })
+        $urlRouterProvider.otherwise('/home');
 }]);
 
 
