@@ -10,6 +10,8 @@
  */
 angular
   .module('promoPlatformApp', [
+    'ui.bootstrap',
+    'angularModalService',
     'ui.router',
     'ngAria',
     'ngCookies',
@@ -49,6 +51,24 @@ angular
             templateUrl: 'views/vendedor-home.html',
             controller: 'VendedorHomeCtrl'
          })
+        .state('add-product', {
+          url: '/agregar-producto',
+          templateUrl: 'views/add-product.html',
+          parent: 'vendedor-home',
+          controller: 'AddProductCtrl'
+        })
+        .state('subscription', {
+          url: '/suscripcion',
+          templateUrl: 'views/subscription.html',
+          parent: 'vendedor-home',
+          controller: 'SubscriptionCtrl'
+        })
+        .state('/create-shop', {
+          url: '/crear-tienda',
+          templateUrl: 'views/create-shop.html',
+          parent: 'vendedor-home',
+          controller: 'CreateShopCtrl'
+        })
         $urlRouterProvider.otherwise('/home');
 }]);
 
