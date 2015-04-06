@@ -63,7 +63,7 @@ angular
           parent: 'vendedor-home',
           controller: 'SubscriptionCtrl'
         })
-        .state('/create-shop', {
+        .state('create-shop', {
           url: '/crear-tienda',
           templateUrl: 'views/create-shop.html',
           parent: 'vendedor-home',
