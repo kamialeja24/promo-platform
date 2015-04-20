@@ -1,6 +1,6 @@
 
 <h3><i class="fa fa-angle-right"></i> Suscripciones </h3>
-<h5><i class="fa fa-angle-right"></i> Haz clic sobre el titulo la sa suscripción de tu interés para obtener más información </h5>
+<h5><i class="fa fa-angle-right"></i> Haz clic sobre el título de la suscripción de tu interés para obtener más información </h5>
 <div class="row mt">
     <div class="col-lg-12">
 
@@ -12,9 +12,46 @@
                     <div id="profile-standard">
 
                     </div>
-                    <div class="profile-01 centered">
-                        <p>STANDARD</p>
-                    </div>
+                                        
+                    <div ng-controller="StandardSubscriptionModalCtrl"><!--Modal-->
+                                    <script type="text/ng-template" id="standardSubscriptionModal.html">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Suscripción Standard</h3>
+                                        </div>
+                                        
+                                        <div class="modal-body">
+                                            <h5 align="justify">
+                                                Al elegir esta suscripción:
+                                                <br>
+                                                <br>
+                                                <ol>
+                                                    <li>El usuario no tendrá acceso a la plataforma de marketing la cual le permitirá obtener información 
+                                                        del tipo de usuario al cual le interesa sus productos, siendo mostrada esta información por medio 
+                                                        de gráficos estadísticos.
+                                                    </li>
+                                                    <li>
+                                                        Podrá ingresar los productos en promoción que desee pero únicamente dos entre estos (los que usted elija) 
+                                                        serán los que se publiquen para que sean vistos por los usuarios.
+                                                    </li>
+                                                    <li>Para continuar con la suscripción deberá pagar mensualmente el valor de <b>$10.000</b> mensualmente.</li>
+                                                </ol>
+                                                
+                                     
+                                            </h5>
+                                        </div>
+                                        
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+		                                    <button class="btn btn-theme" type="button" ng-click="ok()">Suscribirse</button>
+                                        </div>
+                                    </script>
+
+                                    <div class="profile-01 centered" ng-click="standardSubscriptionModal()">
+                                        <p>STANDARD</p>
+                                    </div>
+                                    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                    </div><!--End Modal-->                                       
+                    
                     <div class="centered">
                         <h4>$10.000</h4>
                     </div>
@@ -28,9 +65,48 @@
                     <div id="profile-pro">
                         <!--premium image-->
                     </div>
-                    <div class="profile-01 centered">
-                        <p>PROFESIONAL</p>
-                    </div>
+                    
+                    
+                    <div ng-controller="ProSubscriptionModalCtrl"><!--Modal-->
+                        <script type="text/ng-template" id="proSubscriptionModal.html">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Suscripción Profesional</h3>
+                            </div>
+
+                            <div class="modal-body">
+                                <h5 align="justify">
+                                    Al elegir esta suscripción:
+                                    <br>
+                                    <br>
+                                    <ol>
+                                        <li>El suscriptor tendrá acceso a la plataforma de marketing, en la cual tendrá información estadística de la 
+                                        cantidad y el tipo de usuarios que consulten sus promociones.
+                                        </li>
+                                        <li>Tendrá acceso a las 5 categorías básicas para ingresar sus productos en promoción.
+                                        </li>
+                                        <li>
+                                            Podrá ingresar los productos en promoción que desee, y entre estos podrá elegir diez que 
+                                            serán los que se publiquen para que sean vistos por los usuarios.
+                                        </li>
+                                        <li>Para continuar con la suscripción deberá pagar mensualmente el valor de <b>$30.000</b> mensualmente.</li>
+                                    </ol>
+
+
+                                </h5>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+                                <button class="btn btn-theme" type="button" ng-click="ok()">Suscribirse</button>
+                            </div>
+                        </script>
+
+                        <div class="profile-01 centered" ng-click="proSubscriptionModal()">
+                            <p>PROFESIONAL</p>
+                        </div>
+                        <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                    </div><!--End Modal-->
+
                     <div class="centered">
                         <h4>$30.000</h4>
                     </div>
@@ -43,47 +119,81 @@
                     <div id="profile-premium">
 
                     </div>
-                    <div class="profile-01 centered">
-                        <p>PREMIUM</p>
-                    </div>
+                    
+                 <div ng-controller="PremiumSubscriptionModalCtrl"><!--Modal-->
+                        <script type="text/ng-template" id="premiumSubscriptionModal.html">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Suscripción Premium</h3>
+                            </div>
+
+                            <div class="modal-body">
+                                <h5 align="justify">
+                                    Al elegir esta suscripción:
+                                    <br>
+                                    <br>
+                                    <ol>
+                                        <li>El suscriptor tendrá acceso a la plataforma de marketing, en la cual tendrá información estadística de la 
+                                        cantidad y el tipo de usuarios que consulten sus promociones.
+                                        </li>
+                                        <li>Tendrá acceso a las <b>TODAS</b> categorías para ingresar sus productos en promoción.
+                                        </li>
+                                        <li>
+                                            Podrá ingresar los productos en promoción que desee, y entre estos podrá elegir <b>veinte</b> que 
+                                            serán los que se publiquen para que sean vistos por los usuarios.
+                                        </li>
+                                        <li>Para continuar con la suscripción deberá pagar mensualmente el valor de <b>$50.000</b> mensualmente.</li>
+                                    </ol>
+
+
+                                </h5>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+                                <button class="btn btn-theme" type="button" ng-click="ok()">Suscribirse</button>
+                            </div>
+                        </script>
+
+                        <div class="profile-01 centered" ng-click="premiumSubscriptionModal()">
+                            <p>PREMIUM</p>
+                        </div>
+                        <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                    </div><!--End Modal-->   
+
                     <div class="centered">
                         <h4>$50.000</h4>
                     </div>
                 </div><! --/content-panel -->
             </div><! --/col-md-4 -->   
         </div>
-        <!-- Subscription Description -->
-         <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 mb">
-                    <div class="weather-2 pn">
-                        <div class="subscription-header weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>STANDARD</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>16 ºC</b></h4>
-                                <h6>21º max</h6>
-                                <h6>8º min</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <h5><i class="fa fa-sun-o fa-2x"></i></h5>
-                                <h6><b>Sunny</b></h6>
-                                <h5>7:15 am</h5>
-                            </div>
-                        </div>
+
+        
+        <!-- Note -->
+        <div class="row padding-top">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mb">
+                <div class="content-panel pn">
+                    <div id="nota-shop">
+                        <div class="badge badge-popular">NOTA</div>
+                        <div class="blog-title">Tener en cuenta</div>
+                    </div>
+                    <div class="blog-text">
+                        <p>Es posible cambiar de suscripción si así lo deseea para obtener lo mejor que se ofrece en
+                        cada una de ellas.</p>
                     </div>
                 </div>
-            </div><!--End Suscription description-->
+            </div><!-- /col-md-6-->
+            <div class="col-lg-3 col-md-3 col-sm-3">
+            </div>
+      </div>
+        
     </div>
 </div>   
 
 
 
-
+<!--
 <script>
 //custom select box
 
@@ -91,4 +201,4 @@ $(function(){
 $('select.styled').customSelect();
 });
 
-</script>
+</script> -->

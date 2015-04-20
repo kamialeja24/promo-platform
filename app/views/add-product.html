@@ -39,7 +39,7 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Categoria</label>
                               <div class="col-sm-6">
-                                  <!--boostrap/dist/css override a class so the background is gray-->
+                                  <!--styles/ui-bootstrap.css override a class so the background is gray-->
                                   <div ng-controller="ProductsCategoryModalCtrl"><!--Modal-->
                                     <script type="text/ng-template" id="categoryModal.html">
                                         <div class="modal-header">
@@ -89,7 +89,7 @@
                               <label class="col-sm-2 col-sm-2 control-label">Fecha de expiración</label>
                               <div class="col-sm-10">
                                   <div ng-controller="ExpirationDateCtrl">
-                                      <h5><b>{{dt | date:'fullDate' }}</b></h5>
+                                      <h5><b>{{dt | date:'fullDate'| uppercase }}</b></h5>
                                       
                                       <br>
 

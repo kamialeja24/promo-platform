@@ -51,7 +51,23 @@
     background-size: cover;
 }
 
-
-.subscription-header {
-	background: #68dff0 !important; /*important overwrites other css file with the same characteristic*/
+#nota-shop {
+	background: url(../images/nota-shop.jpg) no-repeat center top;
+	margin-top: -15px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 150px;
+	width: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/*padding top so the note is not rigth at the bottom of the su  bscriptions*/
+.padding-top{
+    padding-top: 30px;
 }
