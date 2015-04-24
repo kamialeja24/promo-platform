@@ -13,7 +13,12 @@
             
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Editar perfil</a></li>
+                     <li>
+                      <a class="logout"  ui-sref="settings">
+                          <i class="fa fa-cogs"></i>
+                      </a>
+                    </li>
+                    
                     <li><a class="logout" ui-sref="home">Cerrar Sesión</a></li>
             	</ul>
             </div>
@@ -34,22 +39,22 @@
               	  	
                   <li class="sub-menu"> <!-- antes decia class mt -->
                       <a ui-sref="add-product">
-                          <i class="fa fa-dashboard"></i>
+                          <i class="fa fa-cart-plus"></i>
                           <span>Agregar productos</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
                       <a ui-sref="subscription">
-                          <i class="fa fa-cogs"></i>
+                          <i class="fa fa-credit-card"></i>
                           <span>Suscripción</span>
                       </a>
                   </li>
                   
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>Estudio de mercado</span>
+                          <i class="fa fa-exclamation-circle"></i>
+                          <span>Quejas y reclamos</span>
                       </a>
                   </li>
 
@@ -76,7 +81,9 @@
       <!--footer start-->
       <footer class="site-footer sticky-footer">
           <div class="text-center">
-              Camila Cardona -Leonardo Celis</br>2015
+               <i class="fa fa-female"></i>
+              Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
+              </br>2015
               <a ui-sref="vendedor-home" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>

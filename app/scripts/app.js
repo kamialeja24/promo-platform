@@ -69,6 +69,12 @@ angular
           parent: 'vendedor-home',
           controller: 'CreateShopCtrl'
         })
+        .state('settings', {
+          url: '/ajustes',
+          templateUrl: 'views/settings.html',
+          parent: 'vendedor-home',
+          controller: 'SettingsCtrl'
+        })
         $urlRouterProvider.otherwise('/home');
 }]);
 
