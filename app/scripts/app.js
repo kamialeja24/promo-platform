@@ -64,7 +64,7 @@ angular
           controller: 'SubscriptionCtrl'
         })
         .state('create-shop', {
-          url: '/crear-tienda',
+          url: '/agregar-tienda',
           templateUrl: 'views/create-shop.html',
           parent: 'vendedor-home',
           controller: 'CreateShopCtrl'
@@ -74,6 +74,24 @@ angular
           templateUrl: 'views/settings.html',
           parent: 'vendedor-home',
           controller: 'SettingsCtrl'
+        })
+        .state('create-company', {
+          url: '/crear-empresa',
+          templateUrl: 'views/create-company.html',
+          parent: 'vendedor-home',
+          controller: 'CreateCompanyCtrl'
+        })
+        .state('list-of-shops', {
+          url: '/lista-de-tiendas',    
+          templateUrl: 'views/list-of-shops.html',
+          parent: 'vendedor-home',
+          controller: 'ListOfShopsCtrl'
+        })
+        .state('list-of-products', {
+          url: '/lista-de-productos', 
+          templateUrl: 'views/list-of-products.html',
+          parent: 'vendedor-home',
+          controller: 'ListOfProductsCtrl'
         })
         $urlRouterProvider.otherwise('/home');
 }]);

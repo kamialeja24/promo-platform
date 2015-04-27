@@ -1,59 +1,51 @@
-<div class="jumbotron">
-  <h1>Bienvenido</h1>   
-    <img src="images/shop.png" alt="shop" />
-</div>
-
-<!-- BASIC FORM ELELEMNTS -->
+      	<h3><i class="fa fa-angle-right"></i> Agregar Tienda</h3>
+          	
+          	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-10">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Ingrese a continuación la información concerniente a la empresa</h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> A continuación deberá llenar la información concerniente a la tienda que desea agregar</h4>
                       <form class="form-horizontal style-form" method="get">
                           <!--Name-->
-                          <div class="form-group">                            
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control" name="shop-name" required>
-                              </div>
-                          </div>
-                         <!--Logo-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Imagen logo</label>
-                              <div class="col-sm-6">
-                                  <input type="file" accept="image/*" class="form-control" name="shop-description">
-                              </div>
-                          </div>
-                          <!--Description-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
-                              <div class="col-sm-6">
-                                  <textarea type="text" class="form-control" name="shop-description" required></textarea>
-                              </div>
-                          </div>
-                          <!--Location-->
-                          <div class="form-group">                            
-                              <label class="col-sm-2 col-sm-2 control-label">Ubicación</label>
-                              <div class="col-sm-6">
-                                  <input type="text" class="form-control" name="shop-location" required>
+                                  <input type="text" class="form-control" name="name" required/>
                               </div>
                           </div>
                           
-                            <!--Cancel & Ok buttons-->
+                          <!--Address-->
+                          <h5><i class="fa fa-angle-right"></i> NOTA:<br/> Es importante que la dirección sea validada con Google Maps, esto debido a que los usuarios
+                              de la aplicación podrán ver la ubicación de la tienda en el mapa. Para asegurar esto, haga clic <a href="https://www.google.com/maps"                                           target="_blank"><u>aquí</u></a> e ingrese la dirección 
+                          de la tienda en Google Maps, una vez ubicada ingrese esta dirección en el siguiente campo de texto. <br/><br/> 
+                              <b>Ejemplo:</b> Universidad Distrital Francisco Jose de Caldas, Carrera 8, Bogotá, Chapinero, Colombia</h5>
+                          <br/>
+                          <div class="form-group">
+                              
+                              <label class="col-sm-2 col-sm-2 control-label">Dirección</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control" name="name" required/>
+                              </div>
+                          </div>
+                          <br/>
+                          <br/>
+                          <!--Cancel and ok buttons-->
                             <div class="row">
                                 <div class="col-lg-4">
                                 </div>
                                 <div class="col-lg-2">
-                                    <button class="btn btn-default btn-block" ui-sref="login" type="submit" name="cancel"><i class="fa fa-lock"></i> Cancelar</button>
+                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
+                                    <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
                                 </div>
                                 <div class="col-lg-2">
-                                    <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"><i class="fa fa-lock"></i> Aceptar</button>
+                                    <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"> Aceptar</button>
                                 </div>
                                 <div class="col-lg-4">
                                 </div>
-                            </div>  <!-- End Cancel & ok buttons -->   
-
+                            </div>    
                       </form>
-                          
+                      
+                      <!--Cancel & Ok buttons-->
                       
                   </div>
           		</div><!-- col-lg-12-->      	
