@@ -93,6 +93,12 @@ angular
           parent: 'vendedor-home',
           controller: 'ListOfProductsCtrl'
         })
+        .state('edit-product', {
+          url: '/editar-producto',    
+          templateUrl: 'views/edit-product.html',
+          parent: 'vendedor-home',
+          controller: 'EditProductCtrl'
+        })
         $urlRouterProvider.otherwise('/home');
 }]);
 
