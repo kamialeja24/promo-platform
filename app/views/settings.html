@@ -1,0 +1,121 @@
+<h3><i class="fa fa-angle-right"></i> Configuración </h3>
+<div class="row">
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    <!-- Menu -->
+    <div class="collg-3 col-md-3 col-sm-3">
+        <div class="darkblue-panel pn">
+            <div class="darkblue-header">
+                <h5>EDITAR INFORMACIÓN</h5>
+            </div>
+            <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+            <p>Información del perfil o empresa</p>
+            <footer>
+                <div class="centered">
+                    <h5><i class="fa fa-magic"></i> Enseguida se guardará</h5>
+                </div>
+            </footer>
+        </div><! -- /darkblue panel -->
+    </div>
+    <!-- Form -->
+    <div class="col-lg-7 col-md-7 col-sm-7">
+                  <!-- PROFILE -->    
+                  <div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Perfil</h4>
+                      <!-- Email address -->
+                      <form class="form-horizontal style-form" method="get">
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Correo Electrónico</label>
+                              <div class="col-sm-7">
+                                  <input type="email" class="form-control">
+                              </div>
+                          </div>
+                          <!-- Edit Password -->
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Contraseña</label>
+                              <div class="col-sm-7">
+                                  <div ng-controller="EditPasswordModalCtrl"><!--Modal-->
+                                    <script type="text/ng-template" id="editPasswordModal.html">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Cambiar contraseña</h3>
+                                        </div>
+                                        
+                                        <div class="modal-body">
+                                             <form class="form-horizontal style-form" method="get">
+                                                  <div class="form-group">
+                                                      <label class="col-sm-4 col-sm-4 control-label">Contraseña anterior</label>
+                                                      <div class="col-sm-8">
+                                                          <input type="password" class="form-control">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-sm-4 col-sm-4 control-label">Nueva contraseña</label>
+                                                      <div class="col-sm-8">
+                                                          <input type="password" class="form-control">
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                      <label class="col-sm-4 col-sm-4 control-label">Nueva contraseña, otra vez</label>
+                                                      <div class="col-sm-8">
+                                                          <input type="password" class="form-control">
+                                                      </div>
+                                                  </div>
+                                            </form>                                      
+                                        </div><!-- End modal-body -->
+                                        
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+		                                    <button class="btn btn-theme" type="button" ng-click="ok()">Cambiar contraseña</button>
+                                        </div>
+                                    </script>
+
+                                    <a href="" style="text-decoration:underline" ng-click="editPasswordModal()">Modificar contraseña</a>
+                                    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+                                </div><!--End Modal-->
+       
+                              </div>
+                          </div>
+                          <br/>
+                  <!-- COMPANY -->                 
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Empresa</h4>     
+                          <!--Name-->
+                          <div class="form-group">                            
+                              <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+                              <div class="col-sm-7">
+                                  <input type="text" class="form-control" name="shop-name"/>
+                              </div>
+                          </div>
+                         <!--Logo-->
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Imagen logo</label>
+                              <div class="col-sm-7">
+                                  <input type="file" accept="image/*" class="form-control" name="shop-description">
+                              </div>
+                          </div>
+                          <!--Description-->
+                          <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
+                              <div class="col-sm-7">
+                                  <textarea type="text" class="form-control" name="shop-description"></textarea>
+                              </div>
+                          </div>
+
+                          <!--Cancel and ok buttons-->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                </div>
+                                <div class="col-lg-2">
+                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
+                                    <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button class="btn btn-theme" ng-href="login" type="submit" name="accept"> Guardar configuración</button>
+                                </div>
+                                <div class="col-lg-4">
+                                </div>
+                            </div>    
+                      </form>
+                  </div>        	 
+    </div><!-- End Form -->
+    <div class="col-lg-1 col-md-1 col-sm-1"></div>
+    
+</div>

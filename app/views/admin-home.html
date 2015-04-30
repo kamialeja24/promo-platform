@@ -1,0 +1,83 @@
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>PROMO APP</b></a>
+            <!--logo end-->
+            
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <li><a class="logout" ui-sref="home">Cerrar Sesión</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"> <i class="fa fa-user fa-3x"></i></p>
+              	  <h5 class="centered">Bienvenido</br>Administrador</h5>
+              	  	
+                  
+                  <li class="sub-menu">
+                      <a ui-sref="admin-request">
+                          <i class="fa fa-group"></i>
+                          <span>Peticiones</span>
+                      </a>
+                  </li>               
+                  <li class="sub-menu">
+                      <a ui-sref="admin-complaint" >
+                          <i class="fa fa-bullhorn"></i>
+                          <span>Quejas</span>
+                      </a>
+                  </li>
+                  <li class="sub-menu">
+                      <a ui-sref="admin-claim" >
+                          <i class="fa fa-child"></i>
+                          <span>Reclamos</span>
+                      </a>
+                  </li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+                      <div ui-view=""></div> <!-- Renders the page that is clicked -->
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+
+          </section>
+      </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer sticky-footer">
+          <div class="text-center">
+               <i class="fa fa-female"></i>
+              Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
+              </br>2015
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>

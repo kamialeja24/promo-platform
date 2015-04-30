@@ -1,0 +1,10 @@
+/*overrides the bootstrap modal class so the background is gray when the modal is shown*/
+.modal-backdrop {
+  position:absolute !important;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.6;
+}

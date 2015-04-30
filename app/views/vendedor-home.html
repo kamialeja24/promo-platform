@@ -1,0 +1,111 @@
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+              <div class="sidebar-toggle-box">
+                  <div data-placement="right" data-original-title="Toggle Navigation"></div>
+              </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>PROMO APP</b></a>
+            <!--logo end-->
+            
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                     <li>
+                      <a class="logout"  ui-sref="settings">
+                          <i class="fa fa-cogs"></i>
+                      </a>
+                    </li>
+                    
+                    <li><a class="logout" ui-sref="home">Cerrar Sesión</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+      <aside>
+          <div id="sidebar"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	  <p class="centered"><a href="profile.html"><img src="" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">Marcel Newman</h5>
+              	  	
+                  <li class="sub-menu">
+                      <a ui-sref="create-shop" >
+                          <i class="fa fa-plus-square"></i>
+                          <span>Agregar tienda</span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu">
+                      <a ui-sref="list-of-shops" >
+                          <i class="fa fa-list"></i>
+                          <span>Lista de tiendas</span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu"> <!-- antes decia class mt -->
+                      <a ui-sref="add-product">
+                          <i class="fa fa-cart-plus"></i>
+                          <span>Agregar productos</span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu"> <!-- antes decia class mt -->
+                      <a ui-sref="list-of-products">
+                          <i class="fa fa-list-alt"></i>
+                          <span>Lista de productos</span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu">
+                      <a ui-sref="subscription">
+                          <i class="fa fa-credit-card"></i>
+                          <span>Suscripción</span>
+                      </a>
+                  </li>
+                  
+                  <li class="sub-menu">
+                      <a ui-sref="requests" >
+                          <i class="fa fa-exclamation-circle"></i>
+                          <span>Quejas y reclamos</span>
+                      </a>
+                  </li>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
+      <!--sidebar end-->
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+                      <div ui-view=""></div> <!-- Renders the page that is clicked -->
+                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+
+          </section>
+      </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer sticky-footer">
+          <div class="text-center">
+               <i class="fa fa-female"></i>
+              Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
+              </br>2015
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>

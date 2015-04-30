@@ -1,0 +1,43 @@
+  <section id="container" >
+      <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+             
+            <!--logo start-->
+            <a ng-href="#/" class="logo"><b>PROMO APP</b></a>
+            <!--logo end-->
+
+            <div class="top-menu">
+            	<ul class="nav pull-right top-menu">
+                    <!-- Login button -->
+                    <li><a class="logout" ui-sref="admin-login" style="background-color:#1FBCD2; border-color:red ">Administrador</a></li>
+                    <li><a class="logout" ui-sref="login">Ingresar</a></li>
+                    <li><a class="logout" ui-sref="sign-up">Crear cuenta</a></li>
+            	</ul>
+            </div>
+        </header>
+      <!--header end-->
+      
+
+      
+      <!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+      <!--main content start-->
+          <section class="wrapper">
+            <div class="container">
+                <div ui-view=""></div> <!-- Renders the page that is clicked -->
+            </div>
+          </section>
+
+      <!--main content end-->
+      <!--footer start-->
+      <footer class="site-footer sticky-footer">
+          <div class="text-center">
+            Camila Cardona -Leonardo Celis</br>2015
+          </div>
+      </footer>
+      <!--footer end-->
+  </section>
