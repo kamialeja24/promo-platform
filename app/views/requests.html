@@ -1,0 +1,54 @@
+      	<h3><i class="fa fa-angle-right"></i> Peticiones, Quejas y Reclamos</h3>
+          	
+          	<!-- BASIC FORM ELELEMNTS -->
+          	<div class="row mt">
+          		<div class="col-lg-10">
+                  <div class="form-panel">
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> A continuación podrá enviar cualquier tipo de solicitud, queja o reclamo qu tenga con respecto a la plataforma.</h4>
+                      <form class="form-horizontal style-form" method="get">
+                          
+                          
+                          <div ng-controller="RequestDropdownCtrl">
+                                <!-- Single button -->
+                                <div class="btn-group" dropdown is-open="status.isopen">
+                                  <select class="btn btn-theme dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                                  <option value="opciones" disabled selected>Opciones</option>  
+                                  <option value="peticion">Petición</option>
+                                  <option value="queja">Queja</option>
+                                  <option value="reclamo">Reclamo</option>
+                                </select>
+                                </div>
+                            </div>
+                          </br></br>
+                          <!--Description-->
+                          <div class="form-group">
+                              <div class="col-sm-10">
+                                  <textarea type="text" class="form-control" name="description" rows="10"></textarea>
+                              </div>
+                          </div>
+
+                          <br/>
+                          <br/>
+                          <!--Cancel and ok buttons-->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                </div>
+                                <div class="col-lg-2">
+                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
+                                    <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"> Aceptar</button>
+                                </div>
+                                <div class="col-lg-4">
+                                </div>
+                            </div>    
+                      </form>
+                      
+                      <!--Cancel & Ok buttons-->
+                      
+                  </div>
+          		</div><!-- col-lg-12-->      	
+          	</div><!-- /row -->
+            
+

@@ -34,6 +34,12 @@ angular
             parent: 'common',
             controller: 'MainCtrl'
           })
+          .state('admin-login', {
+            url: '/admin-login',
+            templateUrl: 'views/admin-login.html',
+            parent: 'common',    
+            controller: 'AdminLoginCtrl'
+          })
           .state('login', {
             url: '/login',
             templateUrl: 'views/login.html',
@@ -47,7 +53,7 @@ angular
             controller: 'SignUpCtrl'
           })
           .state('vendedor-home', {
-            url: '/vendedor-home',
+            url: '/vendedor',
             templateUrl: 'views/vendedor-home.html',
             controller: 'VendedorHomeCtrl'
          })
@@ -98,6 +104,41 @@ angular
           templateUrl: 'views/edit-product.html',
           parent: 'vendedor-home',
           controller: 'EditProductCtrl'
+        })
+        .state('requests', {
+          url: '/peticiones-quejas-y-reclamos',
+          templateUrl: 'views/requests.html',
+          parent: 'vendedor-home',
+          controller: 'RequestsCtrl'
+        })    
+        .state('admin-home', {
+          url: '/admin',
+          templateUrl: 'views/admin-home.html',
+          controller: 'AdminHomeCtrl'
+        })
+        .state('admin-main', {
+          url:'/pagina-de-inicio',
+          templateUrl: 'views/admin-main.html',
+          parent: 'admin-home',
+          controller: 'AdminMainCtrl'
+        })
+        .state('admin-request', {
+            url:'/peticiones',
+          templateUrl: 'views/admin-request.html',
+          parent: 'admin-home',
+          controller: 'AdminRequestCtrl'
+        })
+        .state('admin-complaint', {
+          url:'/quejas',
+          templateUrl: 'views/admin-complaint.html',
+          parent: 'admin-home',
+          controller: 'AdminComplaintCtrl'
+        })
+        .state('admin-claim', {
+          url:'/reclamos',
+          templateUrl: 'views/admin-claim.html',
+          parent: 'admin-home',
+          controller: 'AdminClaimCtrl'
         })
         $urlRouterProvider.otherwise('/home');
 }]);
