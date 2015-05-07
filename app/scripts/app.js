@@ -19,9 +19,13 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'base64'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+.constant('ApiEndpoint', {
+  url: 'http://192.168.0.3:3000/v1'
+})  
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
         $stateProvider
           .state('common', {
@@ -141,7 +145,24 @@ angular
           controller: 'AdminClaimCtrl'
         })
         $urlRouterProvider.otherwise('/home');
-}]);
+}])
+
+ //app security for non members access disable for testing
+.run(['$rootScope', '$location', '$cookieStore', '$http',
+    function ($rootScope, $location, $cookieStore, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' +                 $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+        var exception_paths = ['/login','/register','/home'] 
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in
+            if (exception_paths.indexOf($location.path()) == -1  && !$rootScope.globals.currentUser) {
+                $location.path('/login');
+            }
+        });
+    }]);
 
 
 

@@ -1,14 +1,18 @@
 <div id="login-page">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
-		        <h2 class="form-login-heading">Inicia Sesión ahora</h2>
-		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="Usuario" autofocus>
+		      <form class="form-login" ng-submit="login(user)" >              
+		        <h2 class="form-login-heading">Inicia Sesión ahora</h2>             
+		        <div class="login-wrap">                   
+                  <div ng-repeat="detail in errors" ng-show="error" class="alert alert-danger" role="alert">
+                      <p class="bg-danger">{{detail}}</p><!--Error message-->
+                  </div>
+                    
+		            <input type="text" class="form-control" ng-model="user.username" placeholder="Usuario" autofocus>
 		            <br>
-		            <input type="password" class="form-control" placeholder="Contraseña">
+		            <input type="password" class="form-control" ng-model="user.password" placeholder="Contraseña">
                     <br>
-		            <button class="btn btn-theme btn-block" ui-sref="create-company" type="submit"> Ingresar</button>
+		            <button class="btn btn-theme btn-block" type="submit"> Ingresar</button>
                     <br>
 		        </div>
 		      </form>	  	

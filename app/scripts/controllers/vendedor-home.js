@@ -8,10 +8,10 @@
  * Controller of the promoPlatformApp
  */
 angular.module('promoPlatformApp')
-  .controller('VendedorHomeCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+  .controller('VendedorHomeCtrl', ['$scope', '$state', 'AuthenticationService',function ($scope, $state, AuthenticationService) {
+      $scope.logout = function(){
+        AuthenticationService.ClearCredentials();
+        $state.go('login');
+      };
+    
+  }]);
