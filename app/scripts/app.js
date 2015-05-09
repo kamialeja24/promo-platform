@@ -13,17 +13,18 @@ angular
     'ui.bootstrap',
     'angularModalService',
     'ui.router',
-    'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'base64'
+    'base64',
+    'angularSpinner',
+    'oitozero.ngSweetAlert'
   ])
 .constant('ApiEndpoint', {
-  url: 'http://192.168.0.3:3000/v1'
+  url: 'http://192.168.0.5:3000/v1'
 })  
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
@@ -143,7 +144,7 @@ angular
           templateUrl: 'views/admin-claim.html',
           parent: 'admin-home',
           controller: 'AdminClaimCtrl'
-        })
+        });
         $urlRouterProvider.otherwise('/home');
 }])
 
@@ -155,10 +156,10 @@ angular
         if ($rootScope.globals.currentUser) {
             $http.defaults.headers.common['Authorization'] = 'Basic ' +                 $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
-        var exception_paths = ['/login','/register','/home'] 
-        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+        var exceptionPaths = ['/login','/sign-up','/home'];
+        $rootScope.$on('$locationChangeStart', function () {
             // redirect to login page if not logged in
-            if (exception_paths.indexOf($location.path()) == -1  && !$rootScope.globals.currentUser) {
+            if (exceptionPaths.indexOf($location.path()) === -1  && !$rootScope.globals.currentUser) {
                 $location.path('/login');
             }
         });

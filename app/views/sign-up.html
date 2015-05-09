@@ -1,24 +1,31 @@
+
 <div id="login-page">
-	  	<div class="container">
-	  	
-		      <form class="form-login" action="index.html">
-		        <h2 class="form-login-heading">Registrate</h2>
-		        <div class="login-wrap">
-		            <input type="email" class="form-control" placeholder="Correo electrónico" name="email" autofocus required>
-		            <br>
-                    <input type="tel" class="form-control" placeholder="Teléfono de contacto" name="tel" autofocus>
-		            <br>
-		            <input type="password" class="form-control" placeholder="Contraseña" name="password" required>
-                    <br>
-                    <input type="password" class="form-control" placeholder="Vuelve a introducir Contraseña" name="password-confirm" required>
-                    <br>
-		            <button class="btn btn-theme btn-block" ng-href="login" type="submit"> Terminar</button>
-                    <hr>
-                    <div class="login-social-link centered">
-                        <p>No necesitas adquirir una suscripción para crear una cuenta</p>
-                    </div>
-		        </div>
-		      </form>	  	
-	  	
-	  	</div>
-	  </div>
+    <div class="container">
+
+          <form class="form-login" ng-submit="signUp(manager)" novalidate>
+            <h2 class="form-login-heading">Registrate</h2>
+            <div class="login-wrap">
+                <div ng-repeat="detail in errors" ng-show="errors" class="alert alert-danger" role="alert">
+                  <p class="bg-danger" ng-repeat="item in detail">{{item}}</p><!--Error message-->
+                </div>
+
+                <input type="text" ng-model="manager.first_name" class="form-control" placeholder="Nombre" name="first_name" id="first_name" required>
+                <br>
+                <input type="text" ng-model="manager.last_name" class="form-control" placeholder="Apellido" name="last_name" id="last_name" required >
+                <br>
+                <input type="email" ng-model="manager.email" class="form-control" placeholder="Correo electrónico" name="email" id="email" required >
+                <br>
+                <input type="password" ng-model="manager.password" class="form-control" placeholder="Contraseña" name="password" id="password" required >
+                <br>
+                <button ng-show = "!dataLoading"   class="btn btn-theme btn-block" href="" type="submit"> Terminar</button>
+                <hr>
+                <span us-spinner ng-show="dataLoading"></span>
+                
+                <div class="login-social-link centered">
+                    <p>No necesitas adquirir una suscripción para crear una cuenta</p>
+                </div>
+            </div>
+          </form>	  	
+
+    </div>
+  </div>

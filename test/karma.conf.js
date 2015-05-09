@@ -33,6 +33,11 @@ module.exports = function(config) {
       'bower_components/angular-modal-service/dst/angular-modal-service.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-base64/angular-base64.js',
+      'bower_components/spin/javascripts/jquery.spin.js',
+      'bower_components/spin.js/spin.js',
+      'bower_components/angular-spinner/angular-spinner.js',
+      'bower_components/sweetalert/lib/sweet-alert.js',
+      'bower_components/angular-sweetalert/SweetAlert.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',
