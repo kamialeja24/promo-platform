@@ -10,6 +10,8 @@
  */
 angular
   .module('promoPlatformApp', [
+    'ngFileUpload',
+    'angularjs-dropdown-multiselect',
     'ui.bootstrap',
     'angularModalService',
     'ui.router',
@@ -24,7 +26,8 @@ angular
     'oitozero.ngSweetAlert'
   ])
 .constant('ApiEndpoint', {
-  url: 'http://192.168.0.5:3000/v1'
+  url: 'http://192.168.0.4:3000/v1',
+  url_for_img:  'http://192.168.0.4:3000/'
 })  
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
@@ -154,7 +157,7 @@ angular
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' +                 $rootScope.globals.currentUser.authdata; // jshint ignore:line
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
         var exceptionPaths = ['/login','/sign-up','/home'];
         $rootScope.$on('$locationChangeStart', function () {
@@ -164,6 +167,3 @@ angular
             }
         });
     }]);
-
-
-

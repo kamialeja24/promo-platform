@@ -7,24 +7,35 @@
  * # Ctrl
  * Controller of the promoPlatformApp
  */
-angular.module('promoPlatformApp').controller('EditShopModalCtrl', function ($scope, $modal, $log) {
+angular.module('promoPlatformApp').controller('EditShopModalCtrl',[ '$scope','$modal','$log','ShopService','$rootScope','SweetAlert', function ($scope, $modal, $log, ShopService,$rootScope,SweetAlert) {
 
-  $scope.items = ['item1', 'item2', 'item3'];
-
-  $scope.editShopModal = function (size) {
-
+  $scope.editShopModal = function (id,size) {
+    
     var modalInstance = $modal.open({
       templateUrl: 'editShopModal.html',
-      controller: function ($scope, $modalInstance, items) {
-            $scope.items = items;
-              $scope.selected = {
-                item: $scope.items[0]
-              };
-
+      controller: function ($scope, $modalInstance) {
+                var manager = $rootScope.globals.currentUser.userObject;
+                var shopPromise = ShopService.getShop(manager,id);
+                shopPromise.then(
+                    function(data){
+                        $scope.shop = data.data.shop;
+                        console.log($scope.shop);
+                    }
+                );
+          
               $scope.ok = function () {
-                $modalInstance.close($scope.selected.item);
+                var shopUpdatePromise = ShopService.updateShop($scope.shop,manager,id);
+                shopUpdatePromise.then(
+                function(data){
+                    SweetAlert.swal("Exito!", "Producto actualizado satisfactoriamente", "success");
+                    $modalInstance.close();
+                },
+                function(data){
+                    SweetAlert.swal("Good job!", "You clicked the button!", "error");
+                }
+                    );
+               
               };
-
               $scope.cancel = function () {
                 $modalInstance.dismiss('cancel');
               };
@@ -32,19 +43,10 @@ angular.module('promoPlatformApp').controller('EditShopModalCtrl', function ($sc
     /*backdrop static makes modal window not close when clicking outside of the modal window.*/    
       size: size,
       resolve: {
-        items: function () {
-          return $scope.items;
-        }
       }
     });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
   };
-});
+}]);
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.

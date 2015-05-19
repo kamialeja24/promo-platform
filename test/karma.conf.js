@@ -20,7 +20,9 @@ module.exports = function(config) {
     files: [
       // bower:js
       'bower_components/jquery/dist/jquery.js',
+      'bower_components/ng-file-upload-shim/ng-file-upload-shim.js',
       'bower_components/angular/angular.js',
+      'bower_components/ng-file-upload/ng-file-upload.js',
       'bower_components/bootstrap/dist/js/bootstrap.js',
       'bower_components/angular-aria/angular-aria.js',
       'bower_components/angular-cookies/angular-cookies.js',
@@ -38,6 +40,8 @@ module.exports = function(config) {
       'bower_components/angular-spinner/angular-spinner.js',
       'bower_components/sweetalert/lib/sweet-alert.js',
       'bower_components/angular-sweetalert/SweetAlert.js',
+      'bower_components/lodash/dist/lodash.compat.js',
+      'bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

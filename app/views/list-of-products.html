@@ -1,132 +1,35 @@
-          	<h3><i class="fa fa-angle-right"></i> Discover Our Panels</h3>
+          	<h3><i class="fa fa-angle-right"></i> Tus productos</h3>
           	<div class="row mt">
           		<div class="col-lg-12">				
 					
 					<! -- 2ND ROW OF PANELS -->
 					<div class="row">
 						<! -- TODO PANEL -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
+						<div ng-repeat = "product in products" class="col-lg-4 col-md-4 col-sm-4 mb">
 							<div class="product-panel-2 pn">
                                 <!--DISCOUNT-->
-								<div class="badge badge-hot">-15%</div>
+								<div class="badge badge-hot">-{{product.discount*100}}%</div>
                                 <!--IMAGE-->
-								<img src="images/bag.png" width="100" alt="">
+								<img ng-src="{{api.url_for_img + product.image_url}}" width="100" alt="">
                                 <!--NAME-->
-								<h5 class="mt">Bolso Morado</h5>
+								<h5 class="mt">{{product.name}}</h5>
                                 <!--PRICE-->
-								<h6>PRECIO: $25000</h6>
+								<h6>PRECIO: ${{product.price}}</h6>
+                                <h6>CATEGORIA: {{product.category_name}}</h6>
 								<button class="btn btn-small btn-theme04">PUBLICAR</button>
                                 <div class="pr2-social centered">
 									<a ui-sref="edit-product" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
+									<a href="" ng-click="deleteProduct({{product.id}})" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
 									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
 								</div>
 							</div>
 						</div><! --/col-md-4 -->
-						
-						<! -- PROFILE 01 PANEL -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-15%</div>
-                                <!--IMAGE-->
-								<img src="images/bag.png" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">Bolso Morado</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: $25000</h6>
-								<button class="btn btn-small btn-theme04">PUBLICAR</button>
-                                <div class="pr2-social centered">
-									<a ui-sref="edit-product" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
-						
-						<! -- PROFILE 02 PANEL -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-15%</div>
-                                <!--IMAGE-->
-								<img src="images/bag.png" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">Bolso Morado</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: $25000</h6>
-								<button class="btn btn-small btn-theme04">PUBLICAR</button>
-                                <div class="pr2-social centered">
-									<a href="#" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
+
 					</div><! --/END 2ND ROW OF PANELS -->
 					
-					<! -- 3RD ROW OF PANELS -->
-					<!-- Product Panel -->
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-15%</div>
-                                <!--IMAGE-->
-								<img src="images/bag.png" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">Bolso Morado</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: $25000</h6>
-								<button class="btn btn-small btn-theme04">PUBLICAR</button>
-                                <div class="pr2-social centered">
-									<a href="#" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
-						
-						<! -- Spotify Panel -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-7%</div>
-                                <!--IMAGE-->
-								<img src="images/graph.png" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">Fondo Azul</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: $13000</h6>
-								<button class="btn btn-small btn-theme04">PUBLICAR</button>
-                                <div class="pr2-social centered">
-									<a href="#" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
+
 					
-						<! -- Blog Panel -->
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-15%</div>
-                                <!--IMAGE-->
-								<img src="images/bag.png" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">Bolso Morado</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: $25000</h6>
-								<button class="btn btn-small btn-theme04">PUBLICAR</button>
-                                <div class="pr2-social centered">
-									<a href="#" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="#" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
-          		
+
                       
 					
           		</div>

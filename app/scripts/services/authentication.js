@@ -3,7 +3,7 @@
 angular.module('promoPlatformApp')
   
 .factory('AuthenticationService',
-    ['$http', '$cookieStore', '$rootScope', '$timeout','ApiEndpoint','$base64',
+    ['$http', '$cookieStore', '$rootScope','$timeout','ApiEndpoint','$base64', 
     function ($http, $cookieStore, $rootScope, $timeout,ApiEnpoint,$base64) {
         var service = {};
  
@@ -43,7 +43,7 @@ angular.module('promoPlatformApp')
                 }
             };
   
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata; // jshint ignore:line
+            $http.defaults.headers.common.Authorization = 'Basic ' + authdata; // jshint ignore:line
             $cookieStore.put('globals', $rootScope.globals);
         };
   

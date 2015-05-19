@@ -24,13 +24,13 @@ angular.module('promoPlatformApp')
             //fail
             function (data){
                 console.log(data);
-                if (data.status == 404){
+                if (data.status === 404){
                     $scope.dataLoading = false;
                     $scope.errors = data.data;                
-                }if(data.status == 500){
+                }if(data.status === 500){
                     $scope.dataLoading = false;
                     $scope.errors = {errors:{message:"Error con el servidor"}}; 
-                }if(data.status == 0){
+                }if(data.status === 0){
                     $scope.dataLoading = false;
                     $scope.errors = {errors:{message:"Verifica tu conexion a internet"}}; 
                 }
