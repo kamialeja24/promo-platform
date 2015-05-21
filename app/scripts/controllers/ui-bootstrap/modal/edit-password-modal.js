@@ -7,10 +7,10 @@
  * # Ctrl
  * Controller of the promoPlatformApp
  */
-angular.module('promoPlatformApp').controller('EditPasswordModalCtrl', function ($scope, $modal, $log) {
+angular.module('promoPlatformApp').controller('EditPasswordModalCtrl',['$scope','$modal','$log', function ($scope, $modal, $log) {
 
   $scope.items = ['item1', 'item2', 'item3'];
-
+  $scope.$emit('modalInfo', "Hello from modal");
   $scope.editPasswordModal = function (size) {
 
     var modalInstance = $modal.open({
@@ -45,7 +45,7 @@ angular.module('promoPlatformApp').controller('EditPasswordModalCtrl', function 
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
-});
+}]);
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.

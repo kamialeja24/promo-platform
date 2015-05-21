@@ -2,7 +2,9 @@
   "name": "promo-platform",
   "version": "0.0.0",
   "dependencies": {
+    "ng-file-upload-shim": "~4.2.0",
     "angular": "^1.3.0",
+    "ng-file-upload": "~4.2.0",
     "bootstrap": "^3.2.0",
     "angular-aria": "^1.3.0",
     "angular-cookies": "^1.3.0",
@@ -14,7 +16,12 @@
     "angular-ui-router": "~0.2.13",
     "angular-modal-service": "~0.6.6",
     "angular-bootstrap": "~0.12.1",
-    "angular-i18n": "^1.3.15"
+    "angular-i18n": "^1.3.15",
+    "angular-base64": "~2.0.4",
+    "spin": "~1.1.6",
+    "angular-spinner": "~0.6.1",
+    "angular-sweetalert": "~1.1.0",
+    "angularjs-dropdown-multiselect": "~1.5.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.3.0"

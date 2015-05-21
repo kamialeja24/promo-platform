@@ -8,26 +8,33 @@
  * Controller of the promoPlatformApp
  */
 angular.module('promoPlatformApp')
-  .controller('ProductsCategoryModalCtrl', function ($scope, $modal, $log) {
-    $scope.items = [
-        'item1',
-        'item2',
-        'item3'
-    ];
-    
+  .controller('ProductsCategoryModalCtrl',['$scope','$modal','$log','CategoryService','SweetAlert', function ($scope, $modal, $log, CategoryService, SweetAlert) {
+
+    var selectedCategory = {};
+    var updateCategory = function(){
+        $scope.$emit('selectedCategory', selectedCategory);  
+    }
 //Open a modal window to know the product categories
      $scope.categoryModal = function (size) {
-
+         
         var modalInstance = $modal.open({
           templateUrl: 'categoryModal.html',
-          controller: function ($scope, $modalInstance, items) {
-            $scope.items = items;
-              $scope.selected = {
-                item: $scope.items[0]
+          controller: function ($scope, $modalInstance) {
+              var categoriesPromise = CategoryService.getMiddleCategories();
+              categoriesPromise.then(
+                function (data){
+                    $scope.categories = data.data.categories;
+                },
+                function (data){}
+              );
+              $scope.setSelectedCategory = function(category){
+                $scope.selectedCategory = category;
+                selectedCategory = category;
+                updateCategory();
+                SweetAlert.swal("¡Asi es!", "Has seleccionado la categoria: "+category.name+" presiona Esc o cancelar para salir", "success"); 
               };
-
               $scope.ok = function () {
-                $modalInstance.close($scope.selected.item);
+                $modalInstance.close();
               };
 
               $scope.cancel = function () {
@@ -37,17 +44,9 @@ angular.module('promoPlatformApp')
           backdrop: 'static',    
           size: size,
           resolve: {
-            items: function () {
-              return $scope.items;
-            }
           }
         });
 
-        modalInstance.result.then(function (selectedItem) {
-          $scope.selected = selectedItem;
-        }, function () {
-          $log.info('Modal dismissed at: ' + new Date());
-        });
       };
 
-  });
+  }]);

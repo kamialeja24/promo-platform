@@ -10,18 +10,26 @@
  */
 angular
   .module('promoPlatformApp', [
+    'ngFileUpload',
+    'angularjs-dropdown-multiselect',
     'ui.bootstrap',
     'angularModalService',
     'ui.router',
-    'ngAria',
     'ngCookies',
     'ngMessages',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'base64',
+    'angularSpinner',
+    'oitozero.ngSweetAlert'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+.constant('ApiEndpoint', {
+  url: 'http://192.168.0.4:3000/v1',
+  url_for_img:  'http://192.168.0.4:3000/'
+})  
+.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
         $stateProvider
           .state('common', {
@@ -139,9 +147,23 @@ angular
           templateUrl: 'views/admin-claim.html',
           parent: 'admin-home',
           controller: 'AdminClaimCtrl'
-        })
+        });
         $urlRouterProvider.otherwise('/home');
-}]);
+}])
 
-
-
+ //app security for non members access disable for testing
+.run(['$rootScope', '$location', '$cookieStore', '$http',
+    function ($rootScope, $location, $cookieStore, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+        var exceptionPaths = ['/login','/sign-up','/home'];
+        $rootScope.$on('$locationChangeStart', function () {
+            // redirect to login page if not logged in
+            if (exceptionPaths.indexOf($location.path()) === -1  && !$rootScope.globals.currentUser) {
+                $location.path('/login');
+            }
+        });
+    }]);

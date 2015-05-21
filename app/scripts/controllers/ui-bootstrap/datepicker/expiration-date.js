@@ -10,9 +10,16 @@
 angular.module('promoPlatformApp')
   .controller('ExpirationDateCtrl', function ($scope) {
      $scope.today = function() {
-        $scope.dt = new Date();
+        var date = new Date();
+        $scope.dt = date;
+        
       };
-      $scope.today();
+      $scope.$watch(function(scope) { 
+      var current_date = $scope.dt.toISOString().slice(0,10);
+        
+         $scope.$emit('dateChanged', current_date);
+      
+      });
 
       $scope.clear = function () {
         $scope.dt = null;
@@ -36,4 +43,5 @@ angular.module('promoPlatformApp')
       };
       $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
       $scope.format = $scope.formats[0];
+      $scope.today();
   });

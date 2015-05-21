@@ -19,7 +19,7 @@
                       </a>
                     </li>
                     
-                    <li><a class="logout" ui-sref="home">Cerrar Sesión</a></li>
+                    <li><a class="logout" href="" ng-click="logout()">Cerrar Sesión</a></li>
             	</ul>
             </div>
         </header>
@@ -34,8 +34,13 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <p class="centered" ng-show="image_present">
+                      <a href="profile.html">
+                           <img  ng-src="{{api.url_for_img + manager.company_logo}}" class="img-circle" width="60" >
+                     
+                      </a>
+                  </p>
+              	  <h5 class="centered">{{manager.company_name}}</h5>
               	  	
                   <li class="sub-menu">
                       <a ui-sref="create-shop" >

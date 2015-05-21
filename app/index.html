@@ -12,6 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
+    <link href="bower_components/sweetalert/lib/sweet-alert.css" rel="stylesheet">
       
   <!--  <link href="bower_components/bootstrap/dist/css/font-awesome.css" rel="stylesheet" /> Lo quite xq me estaba poniendo bullets en el menu-->  
     <link rel="stylesheet" type="styles/zabuto_calendar.css">
@@ -63,7 +64,9 @@
 	
        <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -75,6 +78,14 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-base64/angular-base64.js"></script>
+    <script src="bower_components/spin/javascripts/jquery.spin.js"></script>
+    <script src="bower_components/spin.js/spin.js"></script>
+    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
+    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
+    <script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -117,7 +128,18 @@
         <script src="scripts/controllers/ui-bootstrap/dropdown/request-dropdown.js"></script>
 
         <script src="bower_components/angular-i18n/angular-locale_es.js"></script><!--To change the language settings-->
-
+        
+        <!-- Services -->
+        <script src="scripts/services/authentication.js"></script>
+        <script src="scripts/services/manager.js"></script>
+        <script src="scripts/services/file-upload.js"></script>
+        <script src="scripts/services/shop.js"></script>
+        <script src="scripts/services/product.js"></script>
+        <script src="scripts/services/category.js"></script>
+        <script src="scripts/services/subscription.js"></script>
+      
+        <!-- Directives -->
+        <script src="scripts/directives/file-model.js"></script>
 
   </body>
 </html>

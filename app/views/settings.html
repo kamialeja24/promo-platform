@@ -7,7 +7,7 @@
             <div class="darkblue-header">
                 <h5>EDITAR INFORMACIÓN</h5>
             </div>
-            <h1 class="mt"><i class="fa fa-user fa-3x"></i></h1>
+            <img ng-src="{{api.url_for_img + 'assets/no_company.jpg'}}"/>
             <p>Información del perfil o empresa</p>
             <footer>
                 <div class="centered">
@@ -22,11 +22,11 @@
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> Perfil</h4>
                       <!-- Email address -->
-                      <form class="form-horizontal style-form" method="get">
+                      <form ng-init="loadData();"class="form-horizontal style-form" ng-submit="updateManager(manager)">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Correo Electrónico</label>
                               <div class="col-sm-7">
-                                  <input type="email" class="form-control">
+                                  <input ng-model="manager.email" type="email" class="form-control">
                               </div>
                           </div>
                           <!-- Edit Password -->
@@ -81,21 +81,14 @@
                           <div class="form-group">                            
                               <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
                               <div class="col-sm-7">
-                                  <input type="text" class="form-control" name="shop-name"/>
+                                  <input ng-model="manager.company_name" type="text" class="form-control" name="shop-name"/>
                               </div>
                           </div>
                          <!--Logo-->
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Imagen logo</label>
                               <div class="col-sm-7">
-                                  <input type="file" accept="image/*" class="form-control" name="shop-description">
-                              </div>
-                          </div>
-                          <!--Description-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
-                              <div class="col-sm-7">
-                                  <textarea type="text" class="form-control" name="shop-description"></textarea>
+                                  <input type="file" file-model="companyLogo"/>
                               </div>
                           </div>
 
@@ -105,10 +98,10 @@
                                 </div>
                                 <div class="col-lg-2">
                                     <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
-                                    <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
+                                    <button class="btn btn-default btn-block" ng-href="/lista-de-tiendas"  name="cancel"> Cancelar</button>
                                 </div>
                                 <div class="col-lg-2">
-                                    <button class="btn btn-theme" ng-href="login" type="submit" name="accept"> Guardar configuración</button>
+                                    <button class="btn btn-theme" ng-show="!dataLoading" ng-href="" type="submit" name="accept"> Guardar configuración</button>
                                 </div>
                                 <div class="col-lg-4">
                                 </div>

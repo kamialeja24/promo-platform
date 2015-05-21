@@ -986,7 +986,7 @@ PANELS CONFIGURATIONS
 /*Panel Size*/
 
 .pn {
-	height: 250px;
+	height: 350px;
 	box-shadow: 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -2240,4 +2240,3 @@ label {
 .site-min-height {
     min-height: 900px;
 }
-

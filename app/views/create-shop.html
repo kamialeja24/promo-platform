@@ -5,19 +5,19 @@
           		<div class="col-lg-10">
                   <div class="form-panel">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i> A continuación deberá llenar la información concerniente a la tienda que desea agregar</h4>
-                      <form class="form-horizontal style-form" method="get">
+                      <form class="form-horizontal style-form" ng-submit="createShop(shop)">
                           <!--Name-->
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control" name="name" required/>
+                                  <input type="text" ng-model="shop.name" class="form-control" name="name" required/>
                               </div>
                           </div>
                           <!--Description-->
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
                               <div class="col-sm-6">
-                                  <textarea type="text" class="form-control" name="description"></textarea>
+                                  <textarea type="text" ng-model="shop.description" class="form-control" name="description"></textarea>
                               </div>
                           </div>
                           
@@ -31,7 +31,7 @@
                               
                               <label class="col-sm-2 col-sm-2 control-label">Dirección</label>
                               <div class="col-sm-6">
-                                  <input type="text" class="form-control" name="name" required/>
+                                  <input type="text" ng-model="shop.address" class="form-control" name="adress" required/>
                               </div>
                           </div>
                           <br/>
@@ -45,7 +45,7 @@
                                     <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
                                 </div>
                                 <div class="col-lg-2">
-                                    <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"> Aceptar</button>
+                                    <button class="btn btn-theme btn-block" type="submit" name="accept"> Aceptar</button>
                                 </div>
                                 <div class="col-lg-4">
                                 </div>
