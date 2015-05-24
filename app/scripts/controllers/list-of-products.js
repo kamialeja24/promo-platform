@@ -28,7 +28,7 @@ angular.module('promoPlatformApp')
           console.log(id);
         SweetAlert.swal({
            title: "¿Esta seguro?",
-           text: "No podrás recuperar la informacion de este producto y sera borrado de todas sus locaciones",
+           text: "No podrás recuperar la información de este producto y sera borrado de todas sus locaciones",
            type: "warning",
            showCancelButton: true,
            confirmButtonColor: "#DD6B55",
@@ -41,7 +41,7 @@ angular.module('promoPlatformApp')
               var deletePromise = ProductService.deleteProduct(manager,id);
               deletePromise.then(
                   function(data){
-                    SweetAlert.swal("Borrado", "Su Tienda ha sido borrada", "success");
+                    SweetAlert.swal("Borrado", "Su Producto ha sido borrado", "success");
                     $scope.loadData();
                   },
                   function(data){
@@ -49,7 +49,7 @@ angular.module('promoPlatformApp')
                   });
               
            } else {
-              SweetAlert.swal("Cancelado", "Su tienda no sera borrada", "error");
+              SweetAlert.swal("Cancelado", "Su Producto no sera borrado", "error");
            }
         });
       };
