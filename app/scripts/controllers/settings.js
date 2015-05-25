@@ -8,7 +8,7 @@
  * Controller of the promoPlatformApp
  */
 angular.module('promoPlatformApp')
-  .controller('SettingsCtrl', ['$scope','$rootScope','ManagerService','ApiEndpoint','Upload','fileUpload','$http',function ($scope,$rootScope, ManagerService,ApiEndpoint, Upload, fileUpload, $http) {
+  .controller('SettingsCtrl', ['$scope','$rootScope','ManagerService','ApiEndpoint','Upload','fileUpload','$http','SweetAlert',function ($scope,$rootScope, ManagerService,ApiEndpoint, Upload, fileUpload, $http, SweetAlert) {
     $scope.manager = [];
     $scope.dataLoading = false;
     $scope.loadData = function(){
@@ -33,12 +33,20 @@ angular.module('promoPlatformApp')
             console.log(promise);
             promise.then(function(data){
                 console.log(data);
+                SweetAlert.swal("Bien", "La imagen fue actualizada con exito", "success")
                  $scope.dataLoading = false;
             
             });
             
         }
-        ManagerService.updateManager($scope.manager);
+        var managerPromise = ManagerService.updateManager($scope.manager);
+        $scope.dataLoading = true;
+        managerPromise.then(
+            function(){
+                 $scope.dataLoading = false;
+                 $scope.loadData();
+            }
+        );
         $scope.loadData();         
     };
     $scope.api = ApiEndpoint;

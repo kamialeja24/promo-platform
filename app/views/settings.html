@@ -96,10 +96,7 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                 </div>
-                                <div class="col-lg-2">
-                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
-                                    <button class="btn btn-default btn-block" ng-href="/lista-de-tiendas"  name="cancel"> Cancelar</button>
-                                </div>
+                                 <span us-spinner ng-show="dataLoading"></span>
                                 <div class="col-lg-2">
                                     <button class="btn btn-theme" ng-show="!dataLoading" ng-href="" type="submit" name="accept"> Guardar configuración</button>
                                 </div>

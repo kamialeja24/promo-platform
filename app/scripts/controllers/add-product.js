@@ -13,12 +13,14 @@ angular.module('promoPlatformApp')
       var selectData = [];
       $scope.shops = [];
       $scope.translations= {checkAll: 'Todos',uncheckAll: 'Ninguno',buttonDefaultText:'Seleccione Tiendas',dynamicButtonTextSuffix:'Seleccionado'};
+      $scope.dataLoading = false;
       
       $scope.createProduct =  function(product){
         
-        if ($scope.category && $scope.shops){
+        if ($scope.category && ($scope.shops.length > 0)){
             product.discount = product.discount/100;
             var productCreationPromise = ProductService.createProduct(manager,product,$scope.expirationDate,$scope.category);
+            $scope.dataLoading = true;
             productCreationPromise.then(
                 // Success product creation
                 function (data){
@@ -28,10 +30,11 @@ angular.module('promoPlatformApp')
                         promise.then(
                             // Success image upload
                             function(data){
+                                // Add locations to product
                                 for( var i in $scope.selectData){
                                     ShopService.addProductToShop(manager,$scope.selectData[i].id,data.data.product.id);
-                                    console.log($scope.selectData[i].id);
                                  }
+                                $scope.dataLoading = false;
                                 SweetAlert.swal("¡Bien!", "Tu producto "+data.data.product.name+" ha sido creado correctamente ", "success"); 
                                 $scope.product = {};
                                 $scope.category = {};
@@ -42,12 +45,12 @@ angular.module('promoPlatformApp')
                             }
                         );
                      }else{
+                     // Add locations to product
                      for( var i in $scope.selectData){
                         ShopService.addProductToShop(manager,$scope.selectData[i].id,data.data.product.id);
-                        console.log($scope.selectData[i].id);
-                     
                      }
                      SweetAlert.swal("¡Bien!", "Tu producto "+data.data.product.name+" ha sido creado correctamente ", "success"); 
+                     $scope.dataLoading = false;
                      $scope.product = {};
                      $scope.category = {};
                      }
@@ -60,7 +63,7 @@ angular.module('promoPlatformApp')
             );
         
         }else{
-         SweetAlert.swal("¡Espera!", "Debes seleccionar una categoria y almenos una ubicacion donde tu producto estara disponible ", "error"); 
+         SweetAlert.swal("¡Espera!", "Debes seleccionar una categoria y almenos una ubicacion donde tu producto estará disponible ", "error"); 
         }
         
         

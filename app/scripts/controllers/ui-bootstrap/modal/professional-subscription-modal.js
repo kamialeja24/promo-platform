@@ -7,24 +7,29 @@
  * # Ctrl
  * Controller of the promoPlatformApp
  */
-angular.module('promoPlatformApp').controller('ProSubscriptionModalCtrl', function ($scope, $modal, $log) {
+angular.module('promoPlatformApp').controller('ProSubscriptionModalCtrl',  ['$scope','$modal','$log','$rootScope','SweetAlert','SubscriptionService',function ($scope, $modal, $log, $rootScope, SweetAlert, SubscriptionService) {
 
-  $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.proSubscriptionModal = function (size) {
 
     var modalInstance = $modal.open({
       templateUrl: 'proSubscriptionModal.html',
-      controller: function ($scope, $modalInstance, items) {
-            $scope.items = items;
-              $scope.selected = {
-                item: $scope.items[0]
-              };
-
+      controller: function ($scope, $modalInstance) {
+          var manager = $rootScope.globals.currentUser.userObject;
               $scope.ok = function () {
-                $modalInstance.close($scope.selected.item);
+                var subscriptionPromise = SubscriptionService.buySubscription(manager.id,2);
+                subscriptionPromise.then(
+                    //success buy subscription
+                    function (data){
+                         SweetAlert.swal("Exito!", "Tu Compraste la subscripción Profesional", "success");
+                    },
+                    // error
+                    function (data){
+                        SweetAlert.swal("Error!", "Algo ocurrió", "error");
+                    }
+                );
+                $modalInstance.close();
               };
-
               $scope.cancel = function () {
                 $modalInstance.dismiss('cancel');
               };
@@ -33,19 +38,12 @@ angular.module('promoPlatformApp').controller('ProSubscriptionModalCtrl', functi
       backdrop: 'static',
       size: size,
       resolve: {
-        items: function () {
-          return $scope.items;
+        
         }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $scope.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
+      });
+  
   };
-});
+}]);
 
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.

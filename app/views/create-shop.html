@@ -40,12 +40,9 @@
                             <div class="row">
                                 <div class="col-lg-4">
                                 </div>
+                                <span us-spinner ng-show="dataLoading"></span>
                                 <div class="col-lg-2">
-                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
-                                    <button class="btn btn-default btn-block" ng-href="login" type="submit" name="cancel"> Cancelar</button>
-                                </div>
-                                <div class="col-lg-2">
-                                    <button class="btn btn-theme btn-block" type="submit" name="accept"> Aceptar</button>
+                                    <button class="btn btn-theme btn-block" ng-show="!dataLoading" type="submit" name="accept"> Aceptar</button>
                                 </div>
                                 <div class="col-lg-4">
                                 </div>

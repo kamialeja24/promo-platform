@@ -8,7 +8,7 @@
  * Controller of the promoPlatformApp
  */
 angular.module('promoPlatformApp')
-  .controller('SignUpCtrl',['$scope','ManagerService','SweetAlert', function ($scope, ManagerService, SweetAlert){
+  .controller('SignUpCtrl',['$scope','ManagerService','SweetAlert','$state', function ($scope, ManagerService, SweetAlert,$state){
     $scope.manager = {}
     $scope.dataLoading = false;
     $scope.signUp = function (manager) {
@@ -20,6 +20,9 @@ angular.module('promoPlatformApp')
                 $scope.dataLoading = false;
                 console.log(data.data.manager);
                 SweetAlert.swal("Usuario registrado exitosamente!", "Ahora puedes ingresar se te ha enviado un correo con instrucciones", "success");
+                $scope.manager = {};
+                $state.go('login');
+                
             },
             //fail
             function (data){
