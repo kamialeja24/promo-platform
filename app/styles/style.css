@@ -18,6 +18,7 @@ body {
     margin: 0px !important; Took it off because it was putting the body and the footer together not leaving an space
     http://getbootstrap.com/examples/sticky-footer-navbar/#about*/
     font-size:13px;
+    padding-bottom: 50px;
 }
 
 ul li {
@@ -398,7 +399,7 @@ ul.sidebar-menu li a.active i {
 
 /* MAIN CONTENT CONFIGURATION */
 #main-content {
-    margin-left: 210px;
+    margin-left: 50px; /*distance from the sidebar to the main content*/
 }
 
 .header, .footer {

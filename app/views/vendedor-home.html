@@ -1,14 +1,14 @@
-<section id="container" >
+<section id="wrapper" >
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-        <header class="header black-bg">
+      <header class="header black-bg">
               <div class="sidebar-toggle-box">
-                  <i class="fa fa-arrow-circle-down fa-lg toggle-btn" title="Desplegar menú" data-toggle="collapse" data-target="#menu-content"></i>
+                  <div class="fa fa-bars tooltips" href="#menu-toggle" id="menu-toggle" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="" class="logo"><b>PROMO APP</b></a>
+            <a class="logo"><b>PROMO APP</b></a>
             <!--logo end-->
             
             <div class="top-menu">
@@ -19,7 +19,7 @@
                       </a>
                     </li>
                     
-                    <li><a class="logout" href="" ng-click="logout()">Cerrar Sesión</a></li>
+                    <li><a class="logout" ui-sref="home">Cerrar Sesión</a></li>
             	</ul>
             </div>
         </header>
@@ -29,12 +29,12 @@
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
       <!--sidebar start-->
-      <div class="nav-collapse" id="sidebar">
-  
-        <div class="menu-list">
-  
-            <ul id="menu-content" class="menu-content collapse out sidebar-menu">
-                <p class="centered" ng-show="image_present">
+      <aside>
+          <div id="sidebar-wrapper"  class="nav-collapse ">
+              <!-- sidebar menu start-->
+              <ul class="sidebar-menu" id="nav-accordion">
+              
+              	   <p class="centered" ng-show="image_present">
                       <a href="profile.html">
                            <img  ng-src="{{api.url_for_img + manager.company_logo}}" class="img-circle" width="60" >
                      
@@ -51,7 +51,7 @@
                   
                   <li class="sub-menu">
                       <a ui-sref="list-of-shops" >
-                          <i class="fa fa-list"></i>    
+                          <i class="fa fa-list"></i>
                           <span>Lista de tiendas</span>
                       </a>
                   </li>
@@ -83,10 +83,11 @@
                           <span>Quejas y reclamos</span>
                       </a>
                   </li>
-                    
-            </ul>
-     </div>
-</div>
+
+              </ul>
+              <!-- sidebar menu end-->
+          </div>
+      </aside>
       <!--sidebar end-->
       
       <!-- **********************************************************************************************************************************************************
@@ -104,7 +105,7 @@
 
       <!--main content end-->
       <!--footer start-->
-      <footer class="site-footer sticky-footer">
+      <footer class="site-footer sticky-footer" style="position:fixed">
           <div class="text-center">
                <i class="fa fa-female"></i>
               Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
@@ -113,3 +114,10 @@
       </footer>
       <!--footer end-->
   </section>
+
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
