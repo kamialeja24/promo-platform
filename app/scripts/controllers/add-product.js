@@ -36,6 +36,7 @@ angular.module('promoPlatformApp')
                                  }
                                 $scope.dataLoading = false;
                                 SweetAlert.swal("¡Bien!", "Tu producto "+data.data.product.name+" ha sido creado correctamente ", "success"); 
+                                selectData = [];
                                 $scope.product = {};
                                 $scope.category = {};
                             },
@@ -50,6 +51,7 @@ angular.module('promoPlatformApp')
                         ShopService.addProductToShop(manager,$scope.selectData[i].id,data.data.product.id);
                      }
                      SweetAlert.swal("¡Bien!", "Tu producto "+data.data.product.name+" ha sido creado correctamente ", "success"); 
+                    selectData = [];
                      $scope.dataLoading = false;
                      $scope.product = {};
                      $scope.category = {};
