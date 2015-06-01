@@ -26,8 +26,8 @@ angular
     'oitozero.ngSweetAlert'
   ])
 .constant('ApiEndpoint', {
-  url: 'http://192.168.0.9:3000/v1',
-  url_for_img:  'http://192.168.0.9:3000/'
+  url: 'http://192.168.0.5:3000/v1',
+  url_for_img:  'http://192.168.0.5:3000/'
 })  
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
       
