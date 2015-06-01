@@ -3,21 +3,32 @@
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg">
-             
-            <!--logo start-->
-            <a ng-href="#/" class="logo"><b>PROMO APP</b></a>
+      <nav class="navbar navbar-default black-bg">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--logo start-->
+            <a ui-sref="home" class="logo"><b>PROMO APP</b></a>
             <!--logo end-->
+        </div>
 
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <!-- Login button -->
-                    <li><a class="logout" ui-sref="admin-login" style="background-color:#1FBCD2; border-color:red ">Administrador</a></li>
-                    <li><a class="logout" ui-sref="login">Ingresar</a></li>
-                    <li><a class="logout" ui-sref="sign-up">Crear cuenta</a></li>
-            	</ul>
-            </div>
-        </header>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse top-menu" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="logout" ui-sref="admin-login">Administrador</a></li>
+            <li><a class="logout" ui-sref="login">Ingresar</a></li>
+            <li><a class="logout" ui-sref="sign-up">Crear cuenta</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
       <!--header end-->
       
 
