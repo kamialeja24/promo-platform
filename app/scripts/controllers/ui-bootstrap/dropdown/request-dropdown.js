@@ -11,7 +11,7 @@ angular.module('promoPlatformApp').controller('RequestDropdownCtrl', function ($
 
   $scope.items = ['item1', 'item2', 'item3'];
 
-   $scope.status = {
+  $scope.status = {
     isopen: false
   };
 

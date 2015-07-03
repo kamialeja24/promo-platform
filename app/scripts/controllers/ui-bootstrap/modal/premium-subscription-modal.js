@@ -15,33 +15,33 @@ angular.module('promoPlatformApp').controller('PremiumSubscriptionModalCtrl',  [
     var modalInstance = $modal.open({
       templateUrl: 'premiumSubscriptionModal.html',
       controller: function ($scope, $modalInstance) {
-          var manager = $rootScope.globals.currentUser.userObject;
-              $scope.ok = function () {
-                var subscriptionPromise = SubscriptionService.buySubscription(manager.id,3);
-                subscriptionPromise.then(
-                    //success buy subscription
-                    function (data){
-                         SweetAlert.swal("Exito!", "Tu Compraste la subscripción Premium", "success");
-                    },
-                    // error
-                    function (data){
-                        SweetAlert.swal("Error!", "Algo ocurrió", "error");
-                    }
-                );
-                $modalInstance.close();
-              };
-              $scope.cancel = function () {
-                $modalInstance.dismiss('cancel');
-              };
-          },
-    /*backdrop static makes modal window not close when clicking outside of the modal window.*/    
+        var manager = $rootScope.globals.currentUser.userObject;
+        $scope.ok = function () {
+          var subscriptionPromise = SubscriptionService.buySubscription(manager.id,3);
+          subscriptionPromise.then(
+            //success buy subscription
+            function (data){
+              SweetAlert.swal("Exito!", "Tu Compraste la subscripción Premium", "success");
+            },
+            // error
+            function (data){
+              SweetAlert.swal("Error!", "Algo ocurrió", "error");
+            }
+          );
+          $modalInstance.close();
+        };
+        $scope.cancel = function () {
+          $modalInstance.dismiss('cancel');
+        };
+      },
+      /*backdrop static makes modal window not close when clicking outside of the modal window.*/
       backdrop: 'static',
       size: size,
       resolve: {
-        
-        }
-      });
-  
+
+      }
+    });
+
   };
 }]);
 

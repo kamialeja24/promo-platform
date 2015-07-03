@@ -12,31 +12,31 @@ angular.module('promoPlatformApp')
     $scope.user = {};
     $scope.errors = {};
     $scope.login = function (user){
-        $scope.user = user;
-        console.log($scope.user);
-        AuthenticationService.Login($scope.user.username, $scope.user.password, function(response) {
+      $scope.user = user;
+      console.log($scope.user);
+      AuthenticationService.Login($scope.user.username, $scope.user.password, function(response) {
         if(response){
-        if(response.success) {
+          if(response.success) {
             var userObject = response.user;
             AuthenticationService.SetCredentials($scope.user.username, $scope.user.password,userObject);
             $state.go('list-of-products');
             $scope.error = false;
             $scope.dataLoading = false;
-        } else {
+          } else {
             if (response.message){
-                console.log(response.message);
-                $scope.errors= {error:response.message};
-                $scope.error = true;
-                $scope.dataLoading = false;
+              console.log(response.message);
+              $scope.errors= {error:response.message};
+              $scope.error = true;
+              $scope.dataLoading = false;
             }
-        }
+          }
         }
         else{
-             $scope.errors = {error:'Error de internet'};
-             $scope.error = true;
-             $scope.dataLoading = false;
-            
+          $scope.errors = {error:'Error de internet'};
+          $scope.error = true;
+          $scope.dataLoading = false;
+
         }
-    });
+      });
     };
   }]);

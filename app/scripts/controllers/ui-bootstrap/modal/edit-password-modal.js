@@ -16,20 +16,20 @@ angular.module('promoPlatformApp').controller('EditPasswordModalCtrl',['$scope',
     var modalInstance = $modal.open({
       templateUrl: 'editPasswordModal.html',
       controller: function ($scope, $modalInstance, items) {
-            $scope.items = items;
-              $scope.selected = {
-                item: $scope.items[0]
-              };
+        $scope.items = items;
+        $scope.selected = {
+          item: $scope.items[0]
+        };
 
-              $scope.ok = function () {
-                $modalInstance.close($scope.selected.item);
-              };
+        $scope.ok = function () {
+          $modalInstance.close($scope.selected.item);
+        };
 
-              $scope.cancel = function () {
-                $modalInstance.dismiss('cancel');
-              };
-          },
-    /*backdrop static makes modal window not close when clicking outside of the modal window.*/    
+        $scope.cancel = function () {
+          $modalInstance.dismiss('cancel');
+        };
+      },
+      /*backdrop static makes modal window not close when clicking outside of the modal window.*/
       backdrop: 'static',
       size: size,
       resolve: {
