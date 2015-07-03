@@ -1,147 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Promo App</title>
+  <title>Promo App</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <!--external css-->
-    <link href="bower_components/sweetalert/lib/sweet-alert.css" rel="stylesheet">
-      
-  <!--  <link href="bower_components/bootstrap/dist/css/font-awesome.css" rel="stylesheet" /> Lo quite xq me estaba poniendo bullets en el menu-->  
-    <link rel="stylesheet" type="styles/zabuto_calendar.css">
-    <link rel="stylesheet" type="text/css" href="styles/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="styles/lineicons/style.css">   
-    <link rel="stylesheet" type="text/css" href="styles/sticky-footer.css">
-    <link rel="stylesheet" type="text/css" href="styles/subscription.css">
-    <link rel="stylesheet" type="text/css" href="styles/ui-bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="styles/sidebarcollapse.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="styles/simple-sidebar.css">
-      
-    <!-- Custom styles for this template -->
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/style-responsive.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <!--external css-->
+  <link href="bower_components/sweetalert/lib/sweet-alert.css" rel="stylesheet">
 
-    <script src="js/Chart.js"></script>
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-      
-  </head>
+  <!--  <link href="bower_components/bootstrap/dist/css/font-awesome.css" rel="stylesheet" /> Lo quite xq me estaba poniendo bullets en el menu-->
+  <link rel="stylesheet" type="styles/zabuto_calendar.css">
+  <link rel="stylesheet" type="text/css" href="styles/jquery.gritter.css" />
+  <link rel="stylesheet" type="text/css" href="styles/lineicons/style.css">
+  <link rel="stylesheet" type="text/css" href="styles/sticky-footer.css">
+  <link rel="stylesheet" type="text/css" href="styles/subscription.css">
+  <link rel="stylesheet" type="text/css" href="styles/ui-bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="styles/sidebarcollapse.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="styles/simple-sidebar.css">
 
-  <body ng-app="promoPlatformApp" class="body">
+  <!-- Custom styles for this template -->
+  <link href="styles/style.css" rel="stylesheet">
+  <link href="styles/style-responsive.css" rel="stylesheet">
 
-      <div ui-view></div>
+  <script src="js/Chart.js"></script>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="js/jquery-1.9.1.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="js/jquery.sparkline.js"></script>
-    <script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body ng-app="promoPlatformApp" class="body">
+
+<div ui-view></div>
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+<script src="js/jquery.sparkline.js"></script>
+<script type="text/javascript" src="js/jquery.backstretch.min.js"></script>
 
 
-    <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
-    
-    <script type="text/javascript" src="js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="js/gritter-conf.js"></script>
+<!--common script for all pages-->
+<script src="js/common-scripts.js"></script>
 
-    <!--script for this page-->
-    <script src="js/sparkline-chart.js"></script>    
-	<script src="js/zabuto_calendar.js"></script>	
-	
-       <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="bower_components/angular-base64/angular-base64.js"></script>
-    <script src="bower_components/spin/javascripts/jquery.spin.js"></script>
-    <script src="bower_components/spin.js/spin.js"></script>
-    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
-    <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
-    <script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
-    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
-    <script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<script type="text/javascript" src="js/jquery.gritter.js"></script>
+<script type="text/javascript" src="js/gritter-conf.js"></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/vendedor-home.js"></script>
-        <script src="scripts/controllers/sign-up.js"></script>
-        <script src="scripts/controllers/add-product.js"></script>
-        <script src="scripts/controllers/subscription.js"></script>
-        <script src="scripts/controllers/create-shop.js"></script>
-        <script src="scripts/controllers/settings.js"></script>
-        <script src="scripts/controllers/create-company.js"></script>
-        <script src="scripts/controllers/list-of-shops.js"></script>
-        <script src="scripts/controllers/list-of-products.js"></script>
-        <script src="scripts/controllers/edit-product.js"></script>
-        <script src="scripts/controllers/requests.js"></script>
-        <script src="scripts/controllers/admin-login.js"></script>
-        <script src="scripts/controllers/admin-home.js"></script>
-        <script src="scripts/controllers/admin-main.js"></script>
-        <script src="scripts/controllers/admin-request.js"></script>
-        <script src="scripts/controllers/admin-complaint.js"></script>
-        <script src="scripts/controllers/admin-claim.js"></script>
-        <!-- endbuild -->
-        
-        <!--ui-bootstrap components-->
-        <script src="scripts/controllers/ui-bootstrap/modal/product-category-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/standard-subscription-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/professional-subscription-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/premium-subscription-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/edit-password-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/edit-shop-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/request-detail-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/complaint-detail-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/modal/claim-detail-modal.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/accordion/category-accordion.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/datepicker/expiration-date.js"></script>
-        <script src="scripts/controllers/ui-bootstrap/dropdown/request-dropdown.js"></script>
+<!--script for this page-->
+<script src="js/sparkline-chart.js"></script>
+<script src="js/zabuto_calendar.js"></script>
 
-        <script src="bower_components/angular-i18n/angular-locale_es.js"></script><!--To change the language settings-->
-        
-        <!-- Services -->
-        <script src="scripts/services/authentication.js"></script>
-        <script src="scripts/services/manager.js"></script>
-        <script src="scripts/services/file-upload.js"></script>
-        <script src="scripts/services/shop.js"></script>
-        <script src="scripts/services/product.js"></script>
-        <script src="scripts/services/category.js"></script>
-        <script src="scripts/services/subscription.js"></script>
-      
-        <!-- Directives -->
-        <script src="scripts/directives/file-model.js"></script>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-base64/angular-base64.js"></script>
+<script src="bower_components/spin/javascripts/jquery.spin.js"></script>
+<script src="bower_components/spin.js/spin.js"></script>
+<script src="bower_components/angular-spinner/angular-spinner.js"></script>
+<script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
+<script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
+<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+<script src="bower_components/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-  </body>
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/vendedor-home.js"></script>
+<script src="scripts/controllers/sign-up.js"></script>
+<script src="scripts/controllers/add-product.js"></script>
+<script src="scripts/controllers/subscription.js"></script>
+<script src="scripts/controllers/create-shop.js"></script>
+<script src="scripts/controllers/settings.js"></script>
+<script src="scripts/controllers/create-company.js"></script>
+<script src="scripts/controllers/list-of-shops.js"></script>
+<script src="scripts/controllers/list-of-products.js"></script>
+<script src="scripts/controllers/edit-product.js"></script>
+<script src="scripts/controllers/requests.js"></script>
+<script src="scripts/controllers/admin-login.js"></script>
+<script src="scripts/controllers/admin-home.js"></script>
+<script src="scripts/controllers/admin-main.js"></script>
+<script src="scripts/controllers/admin-request.js"></script>
+<script src="scripts/controllers/admin-complaint.js"></script>
+<script src="scripts/controllers/admin-claim.js"></script>
+<!-- endbuild -->
+
+<!--ui-bootstrap components-->
+<script src="scripts/controllers/ui-bootstrap/modal/product-category-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/standard-subscription-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/professional-subscription-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/premium-subscription-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/edit-password-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/edit-shop-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/request-detail-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/complaint-detail-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/modal/claim-detail-modal.js"></script>
+<script src="scripts/controllers/ui-bootstrap/accordion/category-accordion.js"></script>
+<script src="scripts/controllers/ui-bootstrap/datepicker/expiration-date.js"></script>
+<script src="scripts/controllers/ui-bootstrap/dropdown/request-dropdown.js"></script>
+
+<script src="bower_components/angular-i18n/angular-locale_es.js"></script><!--To change the language settings-->
+
+<!-- Services -->
+<script src="scripts/services/authentication.js"></script>
+<script src="scripts/services/manager.js"></script>
+<script src="scripts/services/file-upload.js"></script>
+<script src="scripts/services/shop.js"></script>
+<script src="scripts/services/product.js"></script>
+<script src="scripts/services/category.js"></script>
+<script src="scripts/services/subscription.js"></script>
+
+<!-- Directives -->
+<script src="scripts/directives/file-model.js"></script>
+
+</body>
 </html>

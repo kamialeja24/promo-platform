@@ -1,40 +1,40 @@
-          	<h3><i class="fa fa-angle-right"></i> Tus productos</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                    <span us-spinner ng-show="dataLoading"></span>
-					<h3 ng-show="!hasSubscription"> Compra una subscripción porfavor </h3>
-					<! -- 2ND ROW OF PANELS -->
-					<div  ng-show="hasSubscription" class="row">
-						<! -- TODO PANEL -->
-						<div ng-repeat = "product in products" class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-                                <!--DISCOUNT-->
-								<div class="badge badge-hot">-{{product.discount*100}}%</div>
-                                <!--IMAGE-->
-								<img ng-src="{{api.url_for_img + product.image_url}}" width="100" alt="">
-                                <!--NAME-->
-								<h5 class="mt">{{product.name}}</h5>
-                                <!--PRICE-->
-								<h6>PRECIO: ${{product.price}}</h6>
-                                <h6>CATEGORIA: {{product.category_name}}</h6>   
-                                <button ng-show="{{!product.published}}" ng-click="publish({{product.id}})" class="btn btn-small btn-success">PUBLICAR</button>
-                                <button ng-show="{{product.published}}" ng-click="unpublish({{product.id}})" class="btn btn-small btn-theme04">NO PUBLICAR</button>
+<h3><i class="fa fa-angle-right"></i> Tus productos</h3>
+<div class="row mt">
+  <div class="col-lg-12">
+    <span us-spinner ng-show="dataLoading"></span>
+    <h3 ng-show="!hasSubscription"> Compra una subscripción porfavor </h3>
+    <! -- 2ND ROW OF PANELS -->
+    <div  ng-show="hasSubscription" class="row">
+      <! -- TODO PANEL -->
+      <div ng-repeat = "product in products" class="col-lg-4 col-md-4 col-sm-4 mb">
+        <div class="product-panel-2 pn">
+          <!--DISCOUNT-->
+          <div class="badge badge-hot">-{{product.discount*100}}%</div>
+          <!--IMAGE-->
+          <img ng-src="{{api.url_for_img + product.image_url}}" width="100" alt="">
+          <!--NAME-->
+          <h5 class="mt">{{product.name}}</h5>
+          <!--PRICE-->
+          <h6>PRECIO: ${{product.price}}</h6>
+          <h6>CATEGORIA: {{product.category_name}}</h6>
+          <button ng-show="{{!product.published}}" ng-click="publish({{product.id}})" class="btn btn-small btn-success">PUBLICAR</button>
+          <button ng-show="{{product.published}}" ng-click="unpublish({{product.id}})" class="btn btn-small btn-theme04">NO PUBLICAR</button>
 
 
-                                <div class="pr2-social centered">
-									<a ui-sref="edit-product" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
-									<a href="" ng-click="deleteProduct({{product.id}})" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-									<a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
-								</div>
-							</div>
-						</div><! --/col-md-4 -->
+          <div class="pr2-social centered">
+            <a ui-sref="edit-product" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
+            <a href="" ng-click="deleteProduct({{product.id}})" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
+            <a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
+          </div>
+        </div>
+      </div><! --/col-md-4 -->
 
-					</div><! --/END 2ND ROW OF PANELS -->
-					
+    </div><! --/END 2ND ROW OF PANELS -->
 
-					
 
-                      
-					
-          		</div>
-          	</div>
+
+
+
+
+  </div>
+</div>

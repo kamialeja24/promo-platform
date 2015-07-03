@@ -1,123 +1,123 @@
 <section id="wrapper" >
-      <!-- **********************************************************************************************************************************************************
-      TOP BAR CONTENT & NOTIFICATIONS
-      *********************************************************************************************************************************************************** -->
-      <!--header start-->
-      <header class="header black-bg">
-              <div class="sidebar-toggle-box">
-                  <div class="fa fa-bars tooltips" href="#menu-toggle" id="menu-toggle" data-placement="right" data-original-title="Toggle Navigation"></div>
-              </div>
-            <!--logo start-->
-            <a class="logo"><b>PROMO APP</b></a>
-            <!--logo end-->
-            
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                     <li>
-                      <a class="logout"  ui-sref="settings">
-                          <i class="fa fa-cogs"></i>
-                      </a>
-                    </li>
-                    
-                    <li><a class="logout" ng-click="logout()">Cerrar Sesión</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN SIDEBAR MENU
-      *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar-wrapper"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	   <p class="centered" ng-show="image_present">
-                      <a href="profile.html">
-                           <img  ng-src="{{api.url_for_img + manager.company_logo}}" class="img-circle" width="60" >
-                     
-                      </a>
-                  </p>
-              	  <h5 class="centered">{{manager.company_name}}</h5>
-              	  	
-                  <li class="sub-menu">
-                      <a ui-sref="create-shop" >
-                          <i class="fa fa-plus-square"></i>
-                          <span>Agregar tienda</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu">
-                      <a ui-sref="list-of-shops" >
-                          <i class="fa fa-list"></i>
-                          <span>Lista de tiendas</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu"> <!-- antes decia class mt -->
-                      <a ui-sref="add-product">
-                          <i class="fa fa-cart-plus"></i>
-                          <span>Agregar productos</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu"> <!-- antes decia class mt -->
-                      <a ui-sref="list-of-products">
-                          <i class="fa fa-list-alt"></i>
-                          <span>Lista de productos</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu">
-                      <a ui-sref="subscription">
-                          <i class="fa fa-credit-card"></i>
-                          <span>Suscripción</span>
-                      </a>
-                  </li>
-                  
-                  <li class="sub-menu">
-                      <a ui-sref="requests" >
-                          <i class="fa fa-exclamation-circle"></i>
-                          <span>Quejas y reclamos</span>
-                      </a>
-                  </li>
+  <!-- **********************************************************************************************************************************************************
+  TOP BAR CONTENT & NOTIFICATIONS
+  *********************************************************************************************************************************************************** -->
+  <!--header start-->
+  <header class="header black-bg">
+    <div class="sidebar-toggle-box">
+      <div class="fa fa-bars tooltips" href="#menu-toggle" id="menu-toggle" data-placement="right" data-original-title="Toggle Navigation"></div>
+    </div>
+    <!--logo start-->
+    <a class="logo"><b>PROMO APP</b></a>
+    <!--logo end-->
 
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-      <!--sidebar end-->
-      
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper">
+    <div class="top-menu">
+      <ul class="nav pull-right top-menu">
+        <li>
+          <a class="logout"  ui-sref="settings">
+            <i class="fa fa-cogs"></i>
+          </a>
+        </li>
 
-                      <div ui-view=""></div> <!-- Renders the page that is clicked -->
-                  </div><!-- /col-lg-9 END SECTION MIDDLE -->
+        <li><a class="logout" ng-click="logout()">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header end-->
 
-          </section>
-      </section>
+  <!-- **********************************************************************************************************************************************************
+  MAIN SIDEBAR MENU
+  *********************************************************************************************************************************************************** -->
+  <!--sidebar start-->
+  <aside>
+    <div id="sidebar-wrapper"  class="nav-collapse ">
+      <!-- sidebar menu start-->
+      <ul class="sidebar-menu" id="nav-accordion">
 
-      <!--main content end-->
-      <!--footer start-->
-      <footer class="site-footer sticky-footer" style="position:fixed">
-          <div class="text-center">
-               <i class="fa fa-female"></i>
-              Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
-              </br>2015
-          </div>
-      </footer>
-      <!--footer end-->
+        <p class="centered" ng-show="image_present">
+          <a href="profile.html">
+            <img  ng-src="{{api.url_for_img + manager.company_logo}}" class="img-circle" width="60" >
+
+          </a>
+        </p>
+        <h5 class="centered">{{manager.company_name}}</h5>
+
+        <li class="sub-menu">
+          <a ui-sref="create-shop" >
+            <i class="fa fa-plus-square"></i>
+            <span>Agregar tienda</span>
+          </a>
+        </li>
+
+        <li class="sub-menu">
+          <a ui-sref="list-of-shops" >
+            <i class="fa fa-list"></i>
+            <span>Lista de tiendas</span>
+          </a>
+        </li>
+
+        <li class="sub-menu"> <!-- antes decia class mt -->
+          <a ui-sref="add-product">
+            <i class="fa fa-cart-plus"></i>
+            <span>Agregar productos</span>
+          </a>
+        </li>
+
+        <li class="sub-menu"> <!-- antes decia class mt -->
+          <a ui-sref="list-of-products">
+            <i class="fa fa-list-alt"></i>
+            <span>Lista de productos</span>
+          </a>
+        </li>
+
+        <li class="sub-menu">
+          <a ui-sref="subscription">
+            <i class="fa fa-credit-card"></i>
+            <span>Suscripción</span>
+          </a>
+        </li>
+
+        <li class="sub-menu">
+          <a ui-sref="requests" >
+            <i class="fa fa-exclamation-circle"></i>
+            <span>Quejas y reclamos</span>
+          </a>
+        </li>
+
+      </ul>
+      <!-- sidebar menu end-->
+    </div>
+  </aside>
+  <!--sidebar end-->
+
+  <!-- **********************************************************************************************************************************************************
+  MAIN CONTENT
+  *********************************************************************************************************************************************************** -->
+  <!--main content start-->
+  <section id="main-content">
+    <section class="wrapper">
+
+      <div ui-view=""></div> <!-- Renders the page that is clicked -->
+      </div><!-- /col-lg-9 END SECTION MIDDLE -->
+
+    </section>
   </section>
 
-    <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+  <!--main content end-->
+  <!--footer start-->
+  <footer class="site-footer sticky-footer" style="position:fixed">
+    <div class="text-center">
+      <i class="fa fa-female"></i>
+      Camila Cardona - Leonardo Celis <i class="fa fa-male"></i>
+      </br>2015
+    </div>
+  </footer>
+  <!--footer end-->
+</section>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+</script>

@@ -1,136 +1,136 @@
-      	<h3><i class="fa fa-angle-right"></i> Editar Producto</h3>
-          	
-          	<!-- BASIC FORM ELELEMNTS -->
-          	<div class="row mt">
-          		<div class="col-lg-10">
-                  <div class="form-panel">
-                      <form class="form-horizontal style-form" method="get">
-                          <!--Name-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
-                              <div class="col-sm-6">
-                                  <input type="text" class="form-control" name="name" required/>
-                              </div>
-                          </div>
-                          <!--Description-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
-                              <div class="col-sm-6">
-                                  <textarea type="text" class="form-control" name="description"></textarea>
-                              </div>
-                          </div>
-                          <!--Price-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Precio</label>
-                              <div class="col-sm-6">
-                                  <input type="number" class="form-control" name="price" required/>
-                                  <span class="help-block">No ingrese el signo pesos $, ni puntos ni comas. Ejm: 20000</span>
-                              </div>
-                          </div>
-                          <!--Picture-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Imagen</label>
-                              <div class="col-sm-6">
-                                  <input type="file" accept="image/*" class="form-control" name="description">
-                              </div>
-                          </div>
-                          <!--Category-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Categoría</label>
-                              <div class="col-sm-6">
-                                  <!--styles/ui-bootstrap.css override a class so the background is gray-->
-                                  <div ng-controller="ProductsCategoryModalCtrl"><!--Modal-->
-                                    <script type="text/ng-template" id="categoryModal.html">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title">Agregar Categoria</h3>
-                                        </div>
-                                        
-                                        <div class="modal-body">
-                                            <p>seleccione a continuación la categoria que este más a corde al producto</p>
-                                            <br>
-                                            <div ng-controller="CategoryAccordionCtrl">
-                                              <accordion close-others="oneAtATime">
-                                              
-                                                <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                                                  This content is straight in the template.
-                                                </accordion-group>
-                                                
-                                                <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                                                  {{group.content}}
-                                                </accordion-group>
+<h3><i class="fa fa-angle-right"></i> Editar Producto</h3>
 
-                                              </accordion>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="modal-footer">
-                                            <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
-		                                    <button class="btn btn-theme" type="button" ng-click="ok()">Aceptar</button>
-                                        </div>
-                                    </script>
+<!-- BASIC FORM ELELEMNTS -->
+<div class="row mt">
+  <div class="col-lg-10">
+    <div class="form-panel">
+      <form class="form-horizontal style-form" method="get">
+        <!--Name-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Nombre</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" name="name" required/>
+          </div>
+        </div>
+        <!--Description-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Descripción</label>
+          <div class="col-sm-6">
+            <textarea type="text" class="form-control" name="description"></textarea>
+          </div>
+        </div>
+        <!--Price-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Precio</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" name="price" required/>
+            <span class="help-block">No ingrese el signo pesos $, ni puntos ni comas. Ejm: 20000</span>
+          </div>
+        </div>
+        <!--Picture-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Imagen</label>
+          <div class="col-sm-6">
+            <input type="file" accept="image/*" class="form-control" name="description">
+          </div>
+        </div>
+        <!--Category-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Categoría</label>
+          <div class="col-sm-6">
+            <!--styles/ui-bootstrap.css override a class so the background is gray-->
+            <div ng-controller="ProductsCategoryModalCtrl"><!--Modal-->
+              <script type="text/ng-template" id="categoryModal.html">
+                <div class="modal-header">
+                  <h3 class="modal-title">Agregar Categoria</h3>
+                </div>
 
-                                    <a href="" style="text-decoration:underline" ng-click="categoryModal()">Agregar categoria</a>
-                                    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
-                                </div><!--End Modal-->
-       
-                              </div>
-                          </div>
-                          <!--Discount-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Descuento</label>
-                              <div class="col-sm-6">
-                                  <input type="number" class="form-control" name="discount" required/>
-                                  <span class="help-block">No ingrese el signo de porcentaje %. Ejm: 25</span>
-                              </div>
-                          </div>
-                          <!--Expiration Date-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Fecha de expiración</label>
-                              <div class="col-sm-10">
-                                  <div ng-controller="ExpirationDateCtrl">
-                                      <h5><b>{{dt | date:'fullDate'| uppercase }}</b></h5>
-                                      
-                                      <br>
+                <div class="modal-body">
+                  <p>seleccione a continuación la categoria que este más a corde al producto</p>
+                  <br>
+                  <div ng-controller="CategoryAccordionCtrl">
+                    <accordion close-others="oneAtATime">
 
-                                    <div style="display:inline-block; min-height:290px;">
-                                            <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
-                                    </div>
-                                </div><!--End div ExpirationDateCtrl-->
-                              </div>
-                          </div>
-                          <!--Shops-->
-                          <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Tiendas</label>
-                              <div class="col-xs-5">
-                                <select class="form-control" name="browsers" multiple>
-                                    <option value="chrome">Google Chrome</option>
-                                    <option value="firefox">Firefox</option>
-                                    <option value="ie">IE</option>
-                                    <option value="safari">Safari</option>
-                                    <option value="opera">Opera</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                          </div>
+                      <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                        This content is straight in the template.
+                      </accordion-group>
 
-                          <!--Cancel and ok buttons-->
-                            <div class="row">
-                                <div class="col-lg-4">
-                                </div>
-                                <div class="col-lg-2">
-                                    <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
-                                    <button class="btn btn-default btn-block" ui-sref="list-of-products" type="submit" name="cancel"> Cancelar</button>
-                                </div>
-                                <div class="col-lg-2">
-                                    <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"> Aceptar</button>
-                                </div>
-                                <div class="col-lg-4">
-                                </div>
-                            </div>    
-                      </form>
-                      
-                      <!--Cancel & Ok buttons-->
-                      
+                      <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                        {{group.content}}
+                      </accordion-group>
+
+                    </accordion>
                   </div>
-          		</div><!-- col-lg-12-->      	
-          	</div><!-- /row -->
+                </div>
+
+                <div class="modal-footer">
+                  <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+                  <button class="btn btn-theme" type="button" ng-click="ok()">Aceptar</button>
+                </div>
+              </script>
+
+              <a href="" style="text-decoration:underline" ng-click="categoryModal()">Agregar categoria</a>
+              <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+            </div><!--End Modal-->
+
+          </div>
+        </div>
+        <!--Discount-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Descuento</label>
+          <div class="col-sm-6">
+            <input type="number" class="form-control" name="discount" required/>
+            <span class="help-block">No ingrese el signo de porcentaje %. Ejm: 25</span>
+          </div>
+        </div>
+        <!--Expiration Date-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Fecha de expiración</label>
+          <div class="col-sm-10">
+            <div ng-controller="ExpirationDateCtrl">
+              <h5><b>{{dt | date:'fullDate'| uppercase }}</b></h5>
+
+              <br>
+
+              <div style="display:inline-block; min-height:290px;">
+                <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+              </div>
+            </div><!--End div ExpirationDateCtrl-->
+          </div>
+        </div>
+        <!--Shops-->
+        <div class="form-group">
+          <label class="col-sm-2 col-sm-2 control-label">Tiendas</label>
+          <div class="col-xs-5">
+            <select class="form-control" name="browsers" multiple>
+              <option value="chrome">Google Chrome</option>
+              <option value="firefox">Firefox</option>
+              <option value="ie">IE</option>
+              <option value="safari">Safari</option>
+              <option value="opera">Opera</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!--Cancel and ok buttons-->
+        <div class="row">
+          <div class="col-lg-4">
+          </div>
+          <div class="col-lg-2">
+            <!--If ui-sref is putted instead of ng-href, it wont ask to put the requiered textfields-->
+            <button class="btn btn-default btn-block" ui-sref="list-of-products" type="submit" name="cancel"> Cancelar</button>
+          </div>
+          <div class="col-lg-2">
+            <button class="btn btn-theme btn-block" ng-href="login" type="submit" name="accept"> Aceptar</button>
+          </div>
+          <div class="col-lg-4">
+          </div>
+        </div>
+      </form>
+
+      <!--Cancel & Ok buttons-->
+
+    </div>
+  </div><!-- col-lg-12-->
+</div><!-- /row -->
