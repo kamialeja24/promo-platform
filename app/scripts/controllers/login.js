@@ -16,8 +16,8 @@ angular.module('promoPlatformApp')
       console.log($scope.user);
       AuthenticationService.Login($scope.user.username, $scope.user.password, function(response) {
         if(response){
-          if(response.success) {
-            var userObject = response.user;
+        if(response.success) {
+            var userObject = response.manager;
             AuthenticationService.SetCredentials($scope.user.username, $scope.user.password,userObject);
             $state.go('list-of-products');
             $scope.error = false;
