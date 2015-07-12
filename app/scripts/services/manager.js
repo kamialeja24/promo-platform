@@ -1,22 +1,22 @@
 'use strict';
-  
+
 angular.module('promoPlatformApp')
 
 .factory('ManagerService',['$http','ApiEndpoint','$rootScope' ,function($http, ApiEndpoint, $rootScope) {
     console.log('ApiEndpoint', ApiEndpoint);
     // get all client
-   
+
     var getManagers = function() {
         return $http.get(ApiEndpoint.url + '/platform/managers');
     };
-    
+
     //get a manager
-    
+
     var getManager = function(id){
         return $http.get(ApiEndpoint.url + '/platform/managers/'+id);
-        };
+    };
 
-    
+
     //create a manager
     var createManager = function (manager) {
         return $http.post(ApiEndpoint.url + '/platform/managers',
@@ -25,11 +25,11 @@ angular.module('promoPlatformApp')
                            username: manager.username,
                            password: manager.password,
                            email: manager.email,
-                          });    
+                          });
     };
-    
+
     //update manager
-    
+
     var updateManager = function(manager){
         return $http.put(ApiEndpoint.url + '/platform/managers/'+manager.id,
                           {first_name: manager.first_name,
@@ -37,10 +37,10 @@ angular.module('promoPlatformApp')
                            email: manager.email,
                            company_name: manager.company_name
                           });
-    
+
     };
-    
-    
+
+
 
 
   return {

@@ -1,0 +1,55 @@
+<div id="login-page">
+  <div class="container">
+    <div class="col-lg-offset-1">
+      <h1 >Visitas registradas a productos por categoria: {{ category.name }}</h1>
+      <h3 class="text-danger ">{{errorMessage}}</h3>
+    </div>
+    <canvas id="statistics" class="chart chart-pie" data="data" labels="labels" legend="true"></canvas>
+    <div class="row">
+
+      <div class="col-lg-offset-3 col-lg-3">
+        <label>Fecha Inicio</label>
+        <input  ng-change="loadData()" type="date" ng-model="dateStart">
+      </div>
+      <div class="col-lg-6">
+        <label>Fecha Fin</label>
+        <input  ng-change="loadData()" type="date" ng-model="dateEnd">
+      </div>
+      <!--styles/ui-bootstrap.css override a class so the background is gray-->
+      <div ng-controller="PublicCategoryModalCtrl"><!--Modal-->
+        <script type="text/ng-template" id="categoryModal.html">
+          <div class="modal-header">
+            <h3 class="modal-title">Seleccione categoria de interes</h3>
+          </div>
+
+          <div class="modal-body">
+            <p>seleccione a continuación la categoria que este más a corde al producto</p>
+            <p ng-show="selectedCategory">Categoria seleccionada:</p>
+            <p>{{selectedCategory.name}}<p/>
+            <br>
+            <div ng-controller="CategoryAccordionCtrl">
+              <accordion close-others="oneAtATime">
+                <div ng-repeat="category in categories">
+                  <accordion-group heading="{{category.name}}" >
+                    <div ng-repeat = "child in category.children" >
+                      <button type="button" ng-click="setSelectedCategory({{child}})" class="btn btn-primary btn-lg btn-block">{{child.name}}</button>
+                      <br>
+                    </div>
+                  </accordion-group>
+                </div>
+              </accordion>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-default" type="button" ng-click="cancel()">Cancelar</button>
+            <button class="btn btn-theme" type="button" ng-click="ok()">Aceptar</button>
+          </div>
+        </script>
+
+        <a href=""  ng-click="categoryModal()" class="btn btn-success">Seleccione categoria de interes</a>
+
+      </div><!--End Modal-->
+    </div>
+  </div>
+</div>

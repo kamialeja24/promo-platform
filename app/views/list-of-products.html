@@ -15,16 +15,16 @@
           <!--NAME-->
           <h5 class="mt">{{product.name}}</h5>
           <!--PRICE-->
-          <h6>PRECIO: ${{product.price}}</h6>
+          <h6>PRECIO: COP${{product.price | currency:""}}</h6>
           <h6>CATEGORIA: {{product.category_name}}</h6>
           <button ng-show="{{!product.published}}" ng-click="publish({{product.id}})" class="btn btn-small btn-success">PUBLICAR</button>
           <button ng-show="{{product.published}}" ng-click="unpublish({{product.id}})" class="btn btn-small btn-theme04">NO PUBLICAR</button>
 
 
           <div class="pr2-social centered">
-            <a ui-sref="edit-product" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
+            <a ui-sref="edit-product({id: {{product.id}}})" title="Editar"><i class="fa fa-edit" style="color:#424a5d"></i></a>
             <a href="" ng-click="deleteProduct({{product.id}})" title="Eliminar"><i class="fa fa-eraser" style="color:#424a5d"></i></a>
-            <a href="#" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
+            <a ui-sref="detailed-statistics({id: {{product.id}}})" title="Gráficos"><i class="fa fa-bar-chart" style="color:#424a5d"></i></a>
           </div>
         </div>
       </div><! --/col-md-4 -->
