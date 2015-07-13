@@ -4,17 +4,23 @@
       <h1 >Visitas registradas a productos por categoria: {{ category.name }}</h1>
       <h3 class="text-danger ">{{errorMessage}}</h3>
     </div>
-    <canvas id="statistics" class="chart chart-pie" data="data" labels="labels" legend="true"></canvas>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-sm-8 col-lg-offset-2">
+        <canvas id="statistics" class="chart chart-pie" data="data" labels="labels" legend="true"></canvas>
+      </div>
+    </div>
     <div class="row">
 
-      <div class="col-lg-offset-3 col-lg-3">
+      <div class="col-lg-offset-2 col-lg-4">
         <label>Fecha Inicio</label>
         <input  ng-change="loadData()" type="date" ng-model="dateStart">
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <label>Fecha Fin</label>
         <input  ng-change="loadData()" type="date" ng-model="dateEnd">
       </div>
+    </div>
+    <div class="row">
       <!--styles/ui-bootstrap.css override a class so the background is gray-->
       <div ng-controller="PublicCategoryModalCtrl"><!--Modal-->
         <script type="text/ng-template" id="categoryModal.html">
@@ -46,8 +52,10 @@
             <button class="btn btn-theme" type="button" ng-click="ok()">Aceptar</button>
           </div>
         </script>
+        <div class="col-lg-offset-2 col-sm-offset-2" style="margin-top: 2em;">
 
-        <a href=""  ng-click="categoryModal()" class="btn btn-success">Seleccione categoria de interes</a>
+          <a href=""  ng-click="categoryModal()" class="btn btn-success">Seleccione categoria de interes</a>
+        </div>
 
       </div><!--End Modal-->
     </div>
